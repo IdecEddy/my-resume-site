@@ -18,7 +18,7 @@ const Profile = () => {
             h-full
             w-1/3
             items-center
-            p-10"
+            p-5"
       >
         <div
           className={
