@@ -1,8 +1,9 @@
-import Profile from "../components/my_profile"
+import Profile from '../components/my_profile';
 
 export default function home() {
-    return (
+  return (
     <>
-        <Profile></Profile>
-    </>);
+      <Profile></Profile>
+    </>
+  );
 }
