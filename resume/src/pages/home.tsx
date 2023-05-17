@@ -1,5 +1,6 @@
 import Profile from '../components/my_profile';
 import Profile_mobile from '../components/my_profile_mobile';
+import Intro_slide from '../components/intro_slide';
 import { useState, useEffect } from 'react';
 export default function home() {
   const [useMobile, setMobile] = useState(false);
@@ -19,6 +20,8 @@ export default function home() {
   }, []);
 
   return (
-    <>{useMobile ? <Profile_mobile /> : <Profile />}</>
+    <>
+            {useMobile ? <Profile_mobile /> : <Profile />}
+    </>
   );
 }

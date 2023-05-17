@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile_pic from '../public/profile3.jpg';
 import styles from '../styles/profile.module.css';
 import { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 const Profile_mobile = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center py-10">
         <div className="flex h-40 w-5/6 flex-row overflow-hidden rounded-lg border border-neutral-400">
-          <div className="h-40 w-3/5 overflow-hidden md:w-2/5">
+          <div className="h-40 w-3/5 overflow-hidden md:w-[30%]">
             <Image
               src={profile_pic}
               width="0"
@@ -42,6 +42,7 @@ const Profile_mobile = () => {
               Based in Orlando, FL{' '}
             </p>
             <div className="flex flex-row justify-center pt-2">
+              <a href="https://www.linkedin.com/in/edwinmundo/">
               <FontAwesomeIcon
                 icon={faLinkedinIn}
                 className="
@@ -53,8 +54,11 @@ const Profile_mobile = () => {
                     border-neutral-400
                     p-1
                     text-center
-                    text-sm"
+                    text-sm
+                    hover:cursor-pointer"
               />
+              </a>
+              <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"> 
               <FontAwesomeIcon
                 icon={faYoutube}
                 className="
@@ -66,8 +70,10 @@ const Profile_mobile = () => {
                     border-neutral-400
                     p-1
                     text-center
-                    text-sm"
+                    text-sm
+                    hover:cursor-pointer"
               />
+              </a>
             </div>
             <div className="flex justify-center">
               <button

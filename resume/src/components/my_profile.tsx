@@ -16,7 +16,7 @@ const Profile = () => {
         className="
             flex
             h-full
-            w-1/3
+            w-auto
             items-center
             p-5"
       >
@@ -30,6 +30,7 @@ const Profile = () => {
             'overflow-hidden ' +
             'rounded-3xl ' +
             'border ' +
+            'h-full ' +
             'border-neutral-400 ' +
             styles.profile_container
           }
@@ -90,6 +91,7 @@ const Profile = () => {
             </p>
           </div>
           <div className="flex flex-row justify-center px-10">
+            <a href="https://www.linkedin.com/in/edwinmundo/">
             <FontAwesomeIcon
               icon={faLinkedinIn}
               className="
@@ -103,6 +105,8 @@ const Profile = () => {
                         text-center
                         text-sm"
             />
+            </a>
+            <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ">
             <FontAwesomeIcon
               icon={faYoutube}
               className="
@@ -116,6 +120,7 @@ const Profile = () => {
                         text-center
                         text-sm"
             />
+            </a>
           </div>
           <div className="flex justify-center text-center">
             <button
