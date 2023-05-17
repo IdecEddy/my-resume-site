@@ -21,7 +21,10 @@ export default function home() {
 
   return (
     <>
-            {useMobile ? <Profile_mobile /> : <Profile />}
+      <div className="flex h-full flex-col xl:flex-row 2xl:flex-row">
+        {useMobile ? <Profile_mobile /> : <Profile />}
+        <Intro_slide />
+      </div>
     </>
   );
 }

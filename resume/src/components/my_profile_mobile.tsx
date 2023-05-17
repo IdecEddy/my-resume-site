@@ -43,9 +43,9 @@ const Profile_mobile = () => {
             </p>
             <div className="flex flex-row justify-center pt-2">
               <a href="https://www.linkedin.com/in/edwinmundo/">
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className="
+                <FontAwesomeIcon
+                  icon={faLinkedinIn}
+                  className="
                     mx-2
                     place-self-center
                     overflow-hidden
@@ -56,12 +56,12 @@ const Profile_mobile = () => {
                     text-center
                     text-sm
                     hover:cursor-pointer"
-              />
+                />
               </a>
-              <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"> 
-              <FontAwesomeIcon
-                icon={faYoutube}
-                className="
+              <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ">
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  className="
                     mx-2
                     place-self-center
                     overflow-hidden
@@ -72,7 +72,7 @@ const Profile_mobile = () => {
                     text-center
                     text-sm
                     hover:cursor-pointer"
-              />
+                />
               </a>
             </div>
             <div className="flex justify-center">

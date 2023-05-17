@@ -1,7 +1,6 @@
 @media (min-width: 1536px) {
   .email_button {
     margin-top: 45px;
-    height: 70px;
     font-size: 20px;
   }
   .profile_container {
@@ -16,8 +15,8 @@
   }
 }
 .profile_container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 3rem;
+  padding-right: 3rem;
   padding-bottom: 20px;
   padding-top: 0px;
 }
