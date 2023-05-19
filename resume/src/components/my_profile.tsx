@@ -13,13 +13,7 @@ const Profile = () => {
   return (
     <>
       <div
-        className="
-            flex
-            h-full
-            w-[25%]
-            max-w-[555px]
-            items-center
-            p-5"
+        className="justify-self-center"
       >
         <div
           className={
