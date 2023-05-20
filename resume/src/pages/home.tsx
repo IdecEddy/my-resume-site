@@ -1,6 +1,7 @@
 import Profile from '../components/my_profile';
 import Profile_mobile from '../components/my_profile_mobile';
 import Intro_slide from '../components/intro_slide';
+import Nav_bar from '../components/nav_bar';
 import { useState, useEffect } from 'react';
 export default function home() {
   const [useMobile, setMobile] = useState(false);
@@ -21,10 +22,11 @@ export default function home() {
 
   return (
     <>
-      <div className="h-[10%]" /> 
-      <div className="h-[5000px] slide-deck mx-10 grid gap-[20px] grid-cols-4">
+      <div className="h-[10%]" />
+      <div className="slide-deck mx-10 grid h-[5000px] grid-cols-[repeat(3,minmax(0,1fr))_100px] gap-[100px]">
         {useMobile ? <Profile_mobile /> : <Profile />}
         <Intro_slide />
+        <Nav_bar />
       </div>
     </>
   );

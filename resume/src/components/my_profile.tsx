@@ -9,41 +9,52 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile_pic from '../public/profile3.jpg';
 import styles from '../styles/profile.module.css';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 const Profile = () => {
-  
-  
   useEffect(() => {
-    function update_grid_cell_size(){
-        let element = document.getElementsByClassName('slide-deck');;
-        if (element[0]) {
-            let grid_bounding = element[0].getBoundingClientRect();
-            let left_pad = grid_bounding.left; 
-            let cell_width = grid_bounding.width / 4;
-            let profile = document.getElementById('profile_box')
-            if(profile) {
-                profile.style.maxWidth=((cell_width - 20 )+'px');
-                let profile_bounding = profile.getBoundingClientRect();
-                let profile_width = profile_bounding.width;
-                let profile_left = (((cell_width - profile_width)/2) + (left_pad - 5))
-                console.log(cell_width, profile_width, (cell_width-profile_width));
-                profile.style.left=((profile_left) +'px');
-            }
+    function update_grid_cell_size() {
+      let gap = 300;
+      let nav_width = 100;
+      let element =
+        document.getElementsByClassName('slide-deck');
+      if (element[0]) {
+        let grid_bounding =
+          element[0].getBoundingClientRect();
+        let left_pad = grid_bounding.left;
+        let cell_width =
+          (grid_bounding.width - gap - nav_width) / 3;
+        let profile =
+          document.getElementById('profile_box');
+        if (profile) {
+          profile.style.maxWidth = cell_width + 'px';
+          let profile_bounding =
+            profile.getBoundingClientRect();
+          let profile_width = profile_bounding.width;
+          let profile_left =
+            (cell_width - profile_width) / 2 + left_pad;
+          profile.style.left = profile_left + 'px';
         }
-    };
-    update_grid_cell_size(); 
-    window.addEventListener('resize', update_grid_cell_size);
+      }
+    }
+    update_grid_cell_size();
+    window.addEventListener(
+      'resize',
+      update_grid_cell_size
+    );
 
     return () => {
-      window.removeEventListener('resize', update_grid_cell_size);
+      window.removeEventListener(
+        'resize',
+        update_grid_cell_size
+      );
     };
-  },[]);
-  
+  }, []);
 
   return (
     <>
       <div
-        className="justify-self-center fixed left-[40px]" id="profile_box"
+        className="fixed left-[40px] justify-self-center"
+        id="profile_box"
       >
         <div
           className={
@@ -58,7 +69,8 @@ const Profile = () => {
             'border-neutral-400 ' +
             'max-w-[510px] ' +
             'px-5 ' +
-            'py-2'
+            'py-2 ' +
+            'pb-10 '
           }
         >
           <div
@@ -79,7 +91,7 @@ const Profile = () => {
                 2xl:self-center
                 2xl:text-[30px]"
             >
-              Edwin Mundo 
+              Edwin Mundo
             </p>
             <div className="text-center 2xl:ml-auto">
               <p className="pb-1 text-center text-xs font-bold 2xl:text-lg 2xl:font-normal">
@@ -97,8 +109,8 @@ const Profile = () => {
             width="0"
             height="0"
             className="
-                    w-full
                     aspect-square
+                    w-full
                     place-self-center
                     rounded-3xl
                     grayscale"
