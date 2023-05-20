@@ -22,7 +22,7 @@ export default function home() {
   return (
     <>
       <div className="h-[10%]" /> 
-      <div className="mx-10 grid gap-10 grid-cols-4">
+      <div className="h-[5000px] slide-deck mx-10 grid gap-[20px] grid-cols-4">
         {useMobile ? <Profile_mobile /> : <Profile />}
         <Intro_slide />
       </div>

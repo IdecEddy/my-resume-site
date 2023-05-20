@@ -9,11 +9,41 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile_pic from '../public/profile3.jpg';
 import styles from '../styles/profile.module.css';
+import {useEffect} from 'react';
 const Profile = () => {
+  
+  
+  useEffect(() => {
+    function update_grid_cell_size(){
+        let element = document.getElementsByClassName('slide-deck');;
+        if (element[0]) {
+            let grid_bounding = element[0].getBoundingClientRect();
+            let left_pad = grid_bounding.left; 
+            let cell_width = grid_bounding.width / 4;
+            let profile = document.getElementById('profile_box')
+            if(profile) {
+                profile.style.maxWidth=((cell_width - 20 )+'px');
+                let profile_bounding = profile.getBoundingClientRect();
+                let profile_width = profile_bounding.width;
+                let profile_left = (((cell_width - profile_width)/2) + (left_pad - 5))
+                console.log(cell_width, profile_width, (cell_width-profile_width));
+                profile.style.left=((profile_left) +'px');
+            }
+        }
+    };
+    update_grid_cell_size(); 
+    window.addEventListener('resize', update_grid_cell_size);
+
+    return () => {
+      window.removeEventListener('resize', update_grid_cell_size);
+    };
+  },[]);
+  
+
   return (
     <>
       <div
-        className="justify-self-center"
+        className="justify-self-center fixed left-[40px]" id="profile_box"
       >
         <div
           className={
@@ -27,7 +57,8 @@ const Profile = () => {
             'border ' +
             'border-neutral-400 ' +
             'max-w-[510px] ' +
-            styles.profile_container
+            'px-5 ' +
+            'py-2'
           }
         >
           <div
@@ -48,7 +79,7 @@ const Profile = () => {
                 2xl:self-center
                 2xl:text-[30px]"
             >
-              Edwin Mundo
+              Edwin Mundo 
             </p>
             <div className="text-center 2xl:ml-auto">
               <p className="pb-1 text-center text-xs font-bold 2xl:text-lg 2xl:font-normal">
@@ -66,13 +97,11 @@ const Profile = () => {
             width="0"
             height="0"
             className="
-                    h-[150px]
-                    w-[150px]
+                    w-full
+                    aspect-square
                     place-self-center
                     rounded-3xl
-                    grayscale
-                    2xl:h-[450px]
-                    2xl:w-[450px]"
+                    grayscale"
           />
           <div className={styles.contact_rows}>
             <p
