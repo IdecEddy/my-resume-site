@@ -18,6 +18,12 @@ const Nav_bar = () => {
         let nav_element =
           document.getElementById('nav_bar');
         if (nav_element) {
+          let nav_bounding =
+            nav_element.getBoundingClientRect();
+          let nav_top_pos =
+            window.innerHeight / 2 -
+            nav_bounding.height / 2;
+          nav_element.style.top = nav_top_pos + 'px';
           nav_element.style.left = nav_pos + 'px';
         }
       }
@@ -27,7 +33,6 @@ const Nav_bar = () => {
       'resize',
       update_grid_cell_size
     );
-
     return () => {
       window.removeEventListener(
         'resize',

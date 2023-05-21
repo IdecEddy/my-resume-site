@@ -32,7 +32,11 @@ const Profile = () => {
           let profile_width = profile_bounding.width;
           let profile_left =
             (cell_width - profile_width) / 2 + left_pad;
+          let profile_top_pos =
+            window.innerHeight / 2 -
+            profile_bounding.height / 2;
           profile.style.left = profile_left + 'px';
+          profile.style.top = profile_top_pos + 'px';
         }
       }
     }
