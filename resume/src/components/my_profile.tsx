@@ -4,6 +4,8 @@ import Image from 'next/image';
 import {
   faLinkedinIn,
   faYoutube,
+  faGithub,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -152,7 +154,10 @@ const Profile = () => {
             </p>
           </div>
           <div className="flex flex-row justify-center px-10">
-            <a href="https://www.linkedin.com/in/edwinmundo/">
+            <a
+              href="https://www.linkedin.com/in/edwinmundo/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faLinkedinIn}
                 className="
@@ -169,9 +174,52 @@ const Profile = () => {
                         2xl:text-xl"
               />
             </a>
-            <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ">
+            <a
+              href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faYoutube}
+                className="
+                        text-smi
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
+            <a
+              href="https://github.com/IdecEddy"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="
+                        text-smi
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
+            <a
+              href="https://twitter.com/TheDebateLord"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faTwitter}
                 className="
                         text-smi
                         mx-2
