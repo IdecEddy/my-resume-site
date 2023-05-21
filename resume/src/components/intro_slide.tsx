@@ -1,7 +1,38 @@
+import { useEffect } from 'react';
+
 const Intro_slide = () => {
+  useEffect(() => {
+    function update_grid_cell_size() {
+      let e = document.getElementById('intro_slide');
+      let b = document.getElementById('profile_box');
+      if (e) {
+        if (b) {
+          let b_bounding = b.getBoundingClientRect();
+          e.style.top = b_bounding.top - 30 + 'px';
+        }
+      }
+    }
+
+    update_grid_cell_size();
+    window.addEventListener(
+      'resize',
+      update_grid_cell_size
+    );
+
+    return () => {
+      window.removeEventListener(
+        'resize',
+        update_grid_cell_size
+      );
+    };
+  }, []);
+
   return (
     <>
-      <div className="col-start-2 col-end-4">
+      <div
+        id="intro_slide"
+        className="relative col-start-2 col-end-4"
+      >
         <p className="font-bold xl:text-[30px]  2xl:text-[60px]">
           Hello I'm{' '}
           <span className="font-bold text-violet-400">
