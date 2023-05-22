@@ -26,7 +26,7 @@ const Time_line_slide = () => {
               <div className=" px-12">
                 <p> Jan 2023 - May 2023 </p>
                 <p className="mt-[10px] text-[25px] font-bold">
-                  Systmes Engineer @ IQNOX
+                  Systems Engineer @ IQNOX
                 </p>
                 <p className="mt-[10px] text-neutral-400">
                   During my year as a systems engineer at
@@ -87,7 +87,7 @@ const Time_line_slide = () => {
                 <p> Feb 2020 - Dec 2022</p>
                 <p className="text-[25px] font-bold">
                   Software & Systems Engineering Contract
-                  for General Attomics with IQNOX
+                  for General Atomics with IQNOX
                 </p>
               </div>
             </li>
@@ -103,7 +103,7 @@ const Time_line_slide = () => {
               <div className="px-12">
                 <p> Jan 2018 - Dec 2019 </p>
                 <p className="text-[25px] font-bold">
-                  Systmes Engineer @ HostDime
+                  Systems Engineer @ HostDime
                 </p>
               </div>
             </li>
