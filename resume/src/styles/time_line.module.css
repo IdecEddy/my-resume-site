@@ -1,0 +1,40 @@
+.timeline_container {
+  margin-top: 120px;
+}
+.timeline_container ul.timeline_ul {
+  display: inline-block;
+}
+.timeline_container ul.timeline_ul li {
+  list-style: none;
+  margin: auto;
+  margin-left: 1em;
+  min-height: 50px;
+  border-left: 1px dashed #fff;
+  padding: 0 0 30px 30px;
+  position: relative;
+}
+.timeline_container ul.timeline_ul li:last-child {
+  border-left: 0px;
+}
+
+.timeline_container ul.timeline_ul li::before {
+  position: absolute;
+  left: -16px;
+  top: -5px;
+  content: ' ';
+  border: 8px solid rgba(255, 255, 255, 1);
+  border-radius: 500%;
+  background: #a78bfa;
+  height: 30px;
+  width: 30px;
+  transition: all 500ms ease-in-out;
+}
+
+.timeline_container ul.timeline_ul li:hover::before {
+  border-color: #232931;
+  transition: all 1000ms ease-in-out;
+}
+
+ul.timestamp_ul li {
+  width: 100px;
+}

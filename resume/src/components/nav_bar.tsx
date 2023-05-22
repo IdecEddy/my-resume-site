@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faUser,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 
 const Nav_bar = () => {
@@ -52,6 +53,10 @@ const Nav_bar = () => {
         />
         <FontAwesomeIcon
           icon={faUser}
+          className="cursor-pointer py-[10px] text-2xl"
+        />
+        <FontAwesomeIcon
+          icon={faBolt}
           className="cursor-pointer py-[10px] text-2xl"
         />
       </div>
