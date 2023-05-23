@@ -54,7 +54,7 @@ const Time_line_slide = () => {
                 <p> Jan 2023 - May 2023 </p>
                 <p className="text-[25px] font-bold">
                   Systems Engineering Contract for BAE
-                  Ststems with IQNOX
+                  Systems with IQNOX
                 </p>
                 <p className="mt-[10px] text-neutral-400">
                   During my contract at BAE Systems, I
@@ -107,18 +107,17 @@ const Time_line_slide = () => {
                   in maintaining and enhancing their
                   requirements management system. One of my
                   major contributions was creating a program
-                  that allowed for seamless transfer of
+                  that allowed for the seamless transfer of
                   requirements documents between systems,
                   saving engineers several hours of idle
                   time during the process. This program was
-                  not only more efficient, but also resulted
-                  in significant cost savings of tens of
-                  thousands of dollars and minimized the
-                  possibility of errors. Additionally, I
-                  assisted in the development of new
-                  features such as post-processing and
-                  programmatically parsing and updating
-                  documents.
+                  more efficient and resulted in significant
+                  cost savings of tens of thousands of
+                  dollars and minimized the possibility of
+                  errors. Additionally, I assisted in the
+                  development of new features such as
+                  post-processing and programmatically
+                  parsing and updating documents.
                 </p>
               </div>
             </li>
@@ -128,6 +127,21 @@ const Time_line_slide = () => {
                 <p className="text-[25px] font-bold">
                   Software Engineer @ IQNOX
                 </p>
+                <p className="mt-[10px] text-neutral-400">
+                  During my time as a software engineer at
+                  IQNOX, I developed tools to efficiently
+                  manage their infrastructure and simplify
+                  deployment processes. This involved
+                  creating Python scripts to gather
+                  inventory data on our server fleet.
+                  Additionally, I played a role in building
+                  their WordPress website and actively
+                  contributed to enhancing their software
+                  offerings. Through collaboration with key
+                  stakeholders, I provided valuable input on
+                  how to improve their applications and
+                  better serve their clients.
+                </p>
               </div>
             </li>
             <li className={styles.timeline_items}>
@@ -136,6 +150,23 @@ const Time_line_slide = () => {
                 <p className="text-[25px] font-bold">
                   Systems Engineer @ HostDime
                 </p>
+                <p className="mt-[10px] text-neutral-400">
+                  During my time at HostDime, I provided
+                  support to their clients by resolving
+                  their web hosting issues. HostDime managed
+                  thousands of servers across seven data
+                  centers worldwide, which hosted various
+                  services including websites/web apps,
+                  databases, email servers, and FTP servers.
+                  These servers could run on either Windows
+                  or Linux. When assisting clients, I would
+                  examine the issue and then analyze the
+                  client's code and service to determine the
+                  root of the problem. This experience
+                  provided me with a solid understanding of
+                  web technologies and has set me apart from
+                  other developers.
+                </p>
               </div>
             </li>
             <li className={styles.timeline_items}>
@@ -143,6 +174,16 @@ const Time_line_slide = () => {
                 <p> Jan 2015 - Dec 2018 </p>
                 <p className="text-[25px] font-bold">
                   PHP Web Developer for Web Wizards
+                </p>
+                <p className="mt-[10px] text-neutral-400">
+                  During my time at Web Wizards, I created
+                  custom WordPress templates and plugins for
+                  various clients such as law firms,
+                  accounting firms, and an aviation school.
+                  This experience helped me gain valuable
+                  skills in web development and taught me
+                  how to present data in a visually engaging
+                  and user-friendly way.
                 </p>
               </div>
             </li>

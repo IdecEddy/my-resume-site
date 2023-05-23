@@ -116,7 +116,7 @@ const Profile = () => {
             height="0"
             className="
                     aspect-square
-                    w-full
+                    w-[85%]
                     place-self-center
                     rounded-3xl
                     grayscale"
