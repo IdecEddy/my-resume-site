@@ -13,8 +13,8 @@ const Intro_slide = () => {
         if (profile_box_element) {
           let profile_bounding =
             profile_box_element.getBoundingClientRect();
-          intro_slide_element.style.top =
-            profile_bounding.top - 30 + 'px';
+          //intro_slide_element.style.top =
+          //  profile_bounding.top - 30 + 'px';
         }
       }
     }

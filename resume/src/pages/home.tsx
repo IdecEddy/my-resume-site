@@ -24,6 +24,7 @@ export default function home() {
 
   return (
     <>
+      <div className='mt-[10%]'/> 
       <div className="slide-deck mx-10 grid h-full grid-cols-[repeat(3,minmax(0,1fr))_100px] gap-x-[100px] gap-y-[300px]">
         {useMobile ? <Profile_mobile /> : <Profile />}
         <Intro_slide />
