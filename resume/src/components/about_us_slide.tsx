@@ -21,8 +21,12 @@ const About_us_slide = () => {
         </div>
         <p className="pt-[20px] text-[60px] font-bold">
           {' '}
-          Finding simple solutions and favoring
-          straightforward designes is a fundamental.
+          Finding{' '}
+          <span className="text-violet-400">
+            simple solutions
+          </span>{' '}
+          and favoring straightforward designes is a
+          fundamental.
         </p>
         <p className="mt-[50px] text-2xl text-neutral-400">
           Seeking simple solutions and straightforward

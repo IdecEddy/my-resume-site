@@ -29,8 +29,8 @@ const Time_line_slide = () => {
                   Systems Engineer @ IQNOX
                 </p>
                 <p className="mt-[10px] text-neutral-400">
-                  During my year as a systems engineer at
-                  IQNOX, I spent my time building out the
+                  In my year as a systems engineer at IQNOX,
+                  I spent my time building out the
                   infrastructure for a managed service
                   provider offering. That year, I took the
                   MSP from zero to production ready. I
@@ -79,15 +79,46 @@ const Time_line_slide = () => {
                   for Los Alamos National Laboratory with
                   IQNOX
                 </p>
+                <p className="mt-[10px] text-neutral-400">
+                  In my work with Los Alamos, I helped
+                  develop a standardized workflow for
+                  testing and requirements across various
+                  national laboratories. Initially, we
+                  established a management system for
+                  requirements and testing. Later, we worked
+                  on creating a system to export
+                  requirements documents in a standard
+                  format. To achieve this, we met with
+                  numerous key stakeholders to address
+                  differences between the workflows of
+                  different laboratories.
+                </p>
               </div>
             </li>
-
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Feb 2020 - Dec 2022</p>
                 <p className="text-[25px] font-bold">
                   Software & Systems Engineering Contract
                   for General Atomics with IQNOX
+                </p>
+                <p className="mt-[10px] text-neutral-400">
+                  While at General Atomics, I played a role
+                  in maintaining and enhancing their
+                  requirements management system. One of my
+                  major contributions was creating a program
+                  that allowed for seamless transfer of
+                  requirements documents between systems,
+                  saving engineers several hours of idle
+                  time during the process. This program was
+                  not only more efficient, but also resulted
+                  in significant cost savings of tens of
+                  thousands of dollars and minimized the
+                  possibility of errors. Additionally, I
+                  assisted in the development of new
+                  features such as post-processing and
+                  programmatically parsing and updating
+                  documents.
                 </p>
               </div>
             </li>
