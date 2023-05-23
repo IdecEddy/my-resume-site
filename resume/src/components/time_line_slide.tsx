@@ -156,7 +156,7 @@ const Time_line_slide = () => {
                   their web hosting issues. HostDime managed
                   thousands of servers across seven data
                   centers worldwide, which hosted various
-                  services including websites/web apps,
+                  services, including websites/web apps,
                   databases, email servers, and FTP servers.
                   These servers could run on either Windows
                   or Linux. When assisting clients, I would
@@ -178,7 +178,7 @@ const Time_line_slide = () => {
                 <p className="mt-[10px] text-neutral-400">
                   During my time at Web Wizards, I created
                   custom WordPress templates and plugins for
-                  various clients such as law firms,
+                  various clients, such as law firms,
                   accounting firms, and an aviation school.
                   This experience helped me gain valuable
                   skills in web development and taught me
