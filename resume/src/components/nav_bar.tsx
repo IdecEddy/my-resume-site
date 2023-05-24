@@ -4,8 +4,8 @@ import {
   faHome,
   faUser,
   faBolt,
+  faList,
 } from '@fortawesome/free-solid-svg-icons';
-
 const Nav_bar = () => {
   useEffect(() => {
     function update_grid_cell_size() {
@@ -49,15 +49,19 @@ const Nav_bar = () => {
       >
         <FontAwesomeIcon
           icon={faHome}
-          className="cursor-pointer py-[10px] text-2xl"
+          className="cursor-pointer py-[10px] text-2xl text-white"
         />
         <FontAwesomeIcon
           icon={faUser}
-          className="cursor-pointer py-[10px] text-2xl"
+          className="cursor-pointer py-[10px] text-2xl text-white"
         />
         <FontAwesomeIcon
           icon={faBolt}
-          className="cursor-pointer py-[10px] text-2xl"
+          className="cursor-pointer py-[10px] text-2xl text-white"
+        />
+        <FontAwesomeIcon
+          icon={faList}
+          className="cursor-pointer py-[10px] text-2xl text-white"
         />
       </div>
     </>

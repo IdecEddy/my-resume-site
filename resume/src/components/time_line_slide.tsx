@@ -6,7 +6,7 @@ const Time_line_slide = () => {
     <>
       <div
         id="about_us_content"
-        className="col-start-2 col-end-4 row-start-3 h-[3000px]"
+        className="col-start-2 col-end-4 row-start-3"
       >
         <div
           id="page_about_marker"
@@ -28,7 +28,7 @@ const Time_line_slide = () => {
                 <p className="mt-[10px] text-[25px] font-bold">
                   Systems Engineer @ IQNOX
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   In my year as a systems engineer at IQNOX,
                   I spent my time building out the
                   infrastructure for a managed service
@@ -56,7 +56,7 @@ const Time_line_slide = () => {
                   Systems Engineering Contract for BAE
                   Systems with IQNOX
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   During my contract at BAE Systems, I
                   consulted for a system upgrade of their
                   internal Source and Requirements
@@ -79,7 +79,7 @@ const Time_line_slide = () => {
                   for Los Alamos National Laboratory with
                   IQNOX
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   In my work with Los Alamos, I helped
                   develop a standardized workflow for
                   testing and requirements across various
@@ -102,7 +102,7 @@ const Time_line_slide = () => {
                   Software & Systems Engineering Contract
                   for General Atomics with IQNOX
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   While at General Atomics, I played a role
                   in maintaining and enhancing their
                   requirements management system. One of my
@@ -127,7 +127,7 @@ const Time_line_slide = () => {
                 <p className="text-[25px] font-bold">
                   Software Engineer @ IQNOX
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   During my time as a software engineer at
                   IQNOX, I developed tools to efficiently
                   manage their infrastructure and simplify
@@ -150,7 +150,7 @@ const Time_line_slide = () => {
                 <p className="text-[25px] font-bold">
                   Systems Engineer @ HostDime
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   During my time at HostDime, I provided
                   support to their clients by resolving
                   their web hosting issues. HostDime managed
@@ -175,7 +175,7 @@ const Time_line_slide = () => {
                 <p className="text-[25px] font-bold">
                   PHP Web Developer for Web Wizards
                 </p>
-                <p className="mt-[10px] text-neutral-400 text-lg">
+                <p className="mt-[10px] text-lg text-neutral-400">
                   During my time at Web Wizards, I created
                   custom WordPress templates and plugins for
                   various clients, such as law firms,

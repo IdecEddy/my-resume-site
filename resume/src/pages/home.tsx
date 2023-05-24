@@ -4,6 +4,7 @@ import Intro_slide from '../components/intro_slide';
 import Nav_bar from '../components/nav_bar';
 import About_us_slide from '../components/about_us_slide';
 import Time_line_slide from '../components/time_line_slide';
+import Services_slide from '../components/services_slide';
 import { useState, useEffect } from 'react';
 export default function home() {
   const [useMobile, setMobile] = useState(false);
@@ -31,6 +32,7 @@ export default function home() {
         <Nav_bar />
         <About_us_slide />
         <Time_line_slide />
+        <Services_slide />
       </div>
     </>
   );

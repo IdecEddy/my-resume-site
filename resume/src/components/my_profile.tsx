@@ -169,7 +169,7 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
-                        text-sm
+                        text-white
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -181,7 +181,6 @@ const Profile = () => {
               <FontAwesomeIcon
                 icon={faYoutube}
                 className="
-                        text-smi
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -190,6 +189,7 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
+                        text-white
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -201,7 +201,6 @@ const Profile = () => {
               <FontAwesomeIcon
                 icon={faGithub}
                 className="
-                        text-smi
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -210,6 +209,7 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
+                        text-white
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -221,7 +221,6 @@ const Profile = () => {
               <FontAwesomeIcon
                 icon={faTwitter}
                 className="
-                        text-smi
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -230,6 +229,7 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
+                        text-white
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -265,7 +265,8 @@ const Profile = () => {
                             bg-inherit
                             pr-2
                             text-[15px]
-                            font-bold
+                            font-bold 
+                            text-white
                             2xl:text-[22px]"
               />
               <p className="bg-inherit"> Hire Me! </p>
