@@ -9,7 +9,7 @@ const About_us_slide = () => {
       >
         <div
           id="page_about_marker"
-          className="mb-[20px] flex w-[130px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2"
+          className="mb-[20px] flex w-[130px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2 hover:cursor-pointer"
         >
           <p className="text-center text-neutral-400">
             <FontAwesomeIcon

@@ -12,7 +12,7 @@ const Services_slide = () => {
       <div className="col-start-2 col-end-4 row-start-4">
         <div
           id="page_services_marker"
-          className="mb-[25px] flex w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2"
+          className="mb-[25px] flex w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2 hover:cursor-pointer"
         >
           <p className="text-center text-neutral-400">
             <FontAwesomeIcon
@@ -22,7 +22,7 @@ const Services_slide = () => {
             Services
           </p>
         </div>
-        <div className="my-[25px] mt-[60px] rounded-lg border border-neutral-400 p-10 hover:border-violet-400">
+        <div className="my-[25px] mt-[60px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
               <p className="text-2xl font-bold text-violet-400 hover:border-violet-400">
@@ -52,7 +52,7 @@ const Services_slide = () => {
             />
           </div>
         </div>
-        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:border-violet-400">
+        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
               <p className="text-2xl font-bold text-violet-400">
@@ -83,7 +83,7 @@ const Services_slide = () => {
             />
           </div>
         </div>
-        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:border-violet-400">
+        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
               <p className="text-2xl font-bold text-violet-400">
@@ -115,7 +115,7 @@ const Services_slide = () => {
             />
           </div>
         </div>
-        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:border-violet-400">
+        <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
               <p className="text-2xl font-bold text-violet-400">
