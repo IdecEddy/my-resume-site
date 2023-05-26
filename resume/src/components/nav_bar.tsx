@@ -41,27 +41,70 @@ const Nav_bar = () => {
       );
     };
   }, []);
+
+  function navToHome() {
+    const home = document.getElementById(
+      'page_home_marker'
+    );
+    if (home) {
+      home.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function navToAbout() {
+    const home = document.getElementById(
+      'page_about_marker'
+    );
+    if (home) {
+      home.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function navToTimeline() {
+    const home = document.getElementById(
+      'page_timeline_marker'
+    );
+    if (home) {
+      home.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function navToServices() {
+    const home = document.getElementById(
+      'page_services_marker'
+    );
+    if (home) {
+      home.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <>
       <div
-        className="h-200px fixed flex flex-col rounded-full border px-[20px] py-[20px]"
+        className="h-200px fixed flex flex-col rounded-full border border-neutral-400 px-[20px] py-[20px]"
         id="nav_bar"
       >
         <FontAwesomeIcon
           icon={faHome}
-          className="cursor-pointer py-[10px] text-2xl text-white"
+          className="cursor-pointer py-[10px] text-2xl text-neutral-400 hover:text-violet-400"
+          onClick={navToHome}
         />
         <FontAwesomeIcon
           icon={faUser}
-          className="cursor-pointer py-[10px] text-2xl text-white"
+          className="cursor-pointer py-[10px] text-2xl text-neutral-400  hover:text-violet-400"
+          onClick={navToAbout}
         />
         <FontAwesomeIcon
           icon={faBolt}
-          className="cursor-pointer py-[10px] text-2xl text-white"
+          className="cursor-pointer py-[10px] text-2xl text-neutral-400  hover:text-violet-400"
+          onClick={navToTimeline}
         />
         <FontAwesomeIcon
           icon={faList}
-          className="cursor-pointer py-[10px] text-2xl text-white"
+          className={
+            'cursor-pointer py-[10px] text-2xl text-neutral-400 hover:text-violet-400  active:text-violet-400 '
+          }
+          onClick={navToServices}
         />
       </div>
     </>

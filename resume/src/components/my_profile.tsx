@@ -169,7 +169,9 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
-                        text-white
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -189,7 +191,9 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
-                        text-white
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -209,7 +213,9 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
-                        text-white
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
               />
@@ -229,7 +235,9 @@ const Profile = () => {
                         border-neutral-400
                         p-2
                         text-center
-                        text-white
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
               />

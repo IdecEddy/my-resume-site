@@ -9,7 +9,7 @@ const Time_line_slide = () => {
         className="col-start-2 col-end-4 row-start-3"
       >
         <div
-          id="page_about_marker"
+          id="page_timeline_marker"
           className="mb-[25px] flex w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2"
         >
           <p className="text-center text-neutral-400">
