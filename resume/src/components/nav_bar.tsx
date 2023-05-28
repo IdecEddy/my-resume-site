@@ -7,6 +7,7 @@ import {
   faList,
 } from '@fortawesome/free-solid-svg-icons';
 const Nav_bar = () => {
+  // This is used to move the navbar with the resizeing of the screen.
   useEffect(() => {
     function update_grid_cell_size() {
       let element =
@@ -41,14 +42,40 @@ const Nav_bar = () => {
       );
     };
   }, []);
-  const [active_menu_item, set_active_menu_item] =
-    useState('');
-  useEffect(() => {}, []);
-  function navTo(navToId: string, index: number) {
+
+  const [menu_state_list, set_state_list] = useState<
+    string[]
+  >(['unset', 'unset']);
+
+  useEffect(() => {
+    console.log(menu_state_list);
+    const enabled_element = document.getElementById(
+      menu_state_list[0]!
+    );
+    const disabled_element = document.getElementById(
+      menu_state_list[1]!
+    );
+
+    if (enabled_element != null) {
+      enabled_element.style.color = 'rgb(167 139 250)';
+    }
+    if (disabled_element != null) {
+      disabled_element.style.color = 'rgb(163 163 163)';
+    }
+  }, [menu_state_list]);
+
+  function navTo(nav_to_id: string, index: number) {
+    const tmp_state_list = [...menu_state_list];
+    tmp_state_list[0] = 'nav_' + index;
+    tmp_state_list[1] = menu_state_list[0] as string;
+    set_state_list(tmp_state_list);
     if (typeof window !== 'undefined') {
-      const home = document.getElementById(navToId);
-      if (home) {
-        home.scrollIntoView({ behavior: 'smooth' });
+      const scroll_to_element =
+        document.getElementById(nav_to_id);
+      if (scroll_to_element) {
+        scroll_to_element.scrollIntoView({
+          behavior: 'smooth',
+        });
       }
     }
   }
