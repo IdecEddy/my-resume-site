@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
@@ -41,42 +41,40 @@ const Nav_bar = () => {
       );
     };
   }, []);
-
-  function navToHome() {
-    const home = document.getElementById(
-      'page_home_marker'
-    );
-    if (home) {
-      home.scrollIntoView({ behavior: 'smooth' });
+  const [active_menu_item, set_active_menu_item] =
+    useState('');
+  useEffect(() => {}, []);
+  function navTo(navToId: string, index: number) {
+    if (typeof window !== 'undefined') {
+      const home = document.getElementById(navToId);
+      if (home) {
+        home.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 
-  function navToAbout() {
-    const home = document.getElementById(
-      'page_about_marker'
-    );
-    if (home) {
-      home.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  function navToTimeline() {
-    const home = document.getElementById(
-      'page_timeline_marker'
-    );
-    if (home) {
-      home.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  function navToServices() {
-    const home = document.getElementById(
-      'page_services_marker'
-    );
-    if (home) {
-      home.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+  const menuIcons = [
+    {
+      icon_name: faHome,
+      active: false,
+      nav_to_link: 'page_home_marker',
+    },
+    {
+      icon_name: faUser,
+      active: false,
+      nav_to_link: 'page_about_marker',
+    },
+    {
+      icon_name: faBolt,
+      active: false,
+      nav_to_link: 'page_timeline_marker',
+    },
+    {
+      icon_name: faList,
+      active: false,
+      nav_to_link: 'page_services_marker',
+    },
+  ];
 
   return (
     <>
@@ -84,28 +82,20 @@ const Nav_bar = () => {
         className="h-200px fixed flex flex-col rounded-full border border-neutral-400 px-[20px] py-[20px]"
         id="nav_bar"
       >
-        <FontAwesomeIcon
-          icon={faHome}
-          className="cursor-pointer py-[10px] text-2xl text-neutral-400 hover:text-violet-400"
-          onClick={navToHome}
-        />
-        <FontAwesomeIcon
-          icon={faUser}
-          className="cursor-pointer py-[10px] text-2xl text-neutral-400  hover:text-violet-400"
-          onClick={navToAbout}
-        />
-        <FontAwesomeIcon
-          icon={faBolt}
-          className="cursor-pointer py-[10px] text-2xl text-neutral-400  hover:text-violet-400"
-          onClick={navToTimeline}
-        />
-        <FontAwesomeIcon
-          icon={faList}
-          className={
-            'cursor-pointer py-[10px] text-2xl text-neutral-400 hover:text-violet-400  active:text-violet-400 '
-          }
-          onClick={navToServices}
-        />
+        {menuIcons.map((item, index) => (
+          <FontAwesomeIcon
+            key={index}
+            id={'nav_' + index}
+            icon={item.icon_name}
+            className={
+              'cursor-pointer py-[10px] text-2xl hover:text-violet-400 ' +
+              (item.active
+                ? 'text-violet-400'
+                : 'text-neutral-400')
+            }
+            onClick={() => navTo(item.nav_to_link, index)}
+          />
+        ))}
       </div>
     </>
   );
