@@ -9,7 +9,7 @@ import {
 const Services_slide = () => {
   return (
     <>
-      <div className="col-start-2 col-end-4 row-start-4">
+      <div className="col-start-2 col-end-4 row-start-4 h-[4000px]">
         <div
           id="page_services_marker"
           className="mb-[25px] flex w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2 hover:cursor-pointer"

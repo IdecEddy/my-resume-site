@@ -48,7 +48,6 @@ const Nav_bar = () => {
   >(['unset', 'unset']);
 
   useEffect(() => {
-    console.log(menu_state_list);
     const enabled_element = document.getElementById(
       menu_state_list[0]!
     );
@@ -74,11 +73,70 @@ const Nav_bar = () => {
         document.getElementById(nav_to_id);
       if (scroll_to_element) {
         scroll_to_element.scrollIntoView({
-          behavior: 'smooth',
+          behavior: 'instant',
         });
       }
     }
   }
+
+  useEffect(() => {
+    function update_vert_pos() {
+      const page_y_offset = window.pageYOffset;
+      let point_list: number[] = [];
+      const tmp_state_list = Array.from(menu_state_list);
+      menuIcons.forEach((item) => {
+        const marker = document.getElementById(
+          item.nav_to_link
+        );
+        if (marker) {
+          const markerBounding =
+            marker.getBoundingClientRect().top;
+          point_list.push(markerBounding + page_y_offset);
+        }
+      });
+
+      for (
+        let index = 0;
+        index < point_list.length;
+        index++
+      ) {
+        if (index < point_list.length) {
+          if (point_list[index + 1]) {
+            if (
+              page_y_offset > point_list[index]! &&
+              page_y_offset < point_list[index + 1]!
+            ) {
+              set_state_list((prevList) => {
+                const tmp_state_list = [...prevList];
+                tmp_state_list[0] = 'nav_' + index;
+                if (tmp_state_list[0] != prevList[0]) {
+                  tmp_state_list[1] = prevList[0] as string;
+                }
+                return tmp_state_list;
+              });
+            }
+          }
+        }
+        if (point_list.length - 1 == index) {
+          if ((page_y_offset + 50) > point_list[index]!) {
+            set_state_list((prevList) => {
+              const tmp_state_list = [...prevList];
+              tmp_state_list[0] = 'nav_' + index;
+              if (tmp_state_list[0] != prevList[0]) {
+                tmp_state_list[1] = prevList[0] as string;
+              }
+              return tmp_state_list;
+            });
+          }
+        }
+      }
+    }
+    window.addEventListener('scroll', update_vert_pos);
+
+    return () => {
+      window.removeEventListener('scroll', update_vert_pos);
+    };
+  }, []);
 
   const menuIcons = [
     {
