@@ -40,6 +40,7 @@ export default function home() {
       return(
         <>
           <div className="mt-[10%]" />
+          <Profile_mobile />
           <Intro_slide />
           <About_us_slide />
           <Time_line_slide />

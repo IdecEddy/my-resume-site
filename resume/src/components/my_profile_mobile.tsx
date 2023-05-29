@@ -2,6 +2,8 @@ import Image from 'next/image';
 import {
   faLinkedinIn,
   faYoutube,
+  faTwitter,
+  faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -42,38 +44,94 @@ const Profile_mobile = () => {
               Based in Orlando, FL{' '}
             </p>
             <div className="flex flex-row justify-center pt-2">
-              <a href="https://www.linkedin.com/in/edwinmundo/">
-                <FontAwesomeIcon
-                  icon={faLinkedinIn}
-                  className="
-                    mx-2
-                    place-self-center
-                    overflow-hidden
-                    rounded-full
-                    border
-                    border-neutral-400
-                    p-1
-                    text-center
-                    text-sm
-                    hover:cursor-pointer"
-                />
-              </a>
-              <a href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ">
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  className="
-                    mx-2
-                    place-self-center
-                    overflow-hidden
-                    rounded-full
-                    border
-                    border-neutral-400
-                    p-1
-                    text-center
-                    text-sm
-                    hover:cursor-pointer"
-                />
-              </a>
+            <a
+              href="https://www.linkedin.com/in/edwinmundo/"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                className="
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faYoutube}
+                className="
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
+            <a
+              href="https://github.com/IdecEddy"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
+            <a
+              href="https://twitter.com/TheDebateLord"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="
+                        mx-2
+                        place-self-center
+                        overflow-hidden
+                        rounded-full
+                        border
+                        border-neutral-400
+                        p-2
+                        text-center
+                        text-neutral-400
+                        hover:border-violet-400
+                        hover:text-violet-400
+                        2xl:p-3
+                        2xl:text-xl"
+              />
+            </a>
             </div>
             <div className="flex justify-center">
               <button
@@ -100,6 +158,7 @@ const Profile_mobile = () => {
                   icon={faEnvelope}
                   className="
                     bg-violet-500
+                    text-white
                     pr-2
                     text-[15px]
                     font-bold"
