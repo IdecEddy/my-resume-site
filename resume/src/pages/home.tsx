@@ -22,18 +22,29 @@ export default function home() {
       window.removeEventListener('resize', updateMobile);
     };
   }, []);
-
-  return (
-    <>
-      <div className="mt-[10%]" />
-      <div className="slide-deck mx-10 grid h-full grid-cols-[repeat(3,minmax(0,1fr))_100px] gap-x-[100px] gap-y-[300px]">
-        {useMobile ? <Profile_mobile /> : <Profile />}
-        <Intro_slide />
-        <Nav_bar />
-        <About_us_slide />
-        <Time_line_slide />
-        <Services_slide />
-      </div>
-    </>
-  );
+    if(!useMobile){
+      return(
+        <>
+          <div className="mt-[10%]" />
+          <div className="slide-deck mx-10 grid h-full grid-cols-[repeat(3,minmax(0,1fr))_100px] gap-x-[100px] gap-y-[300px]">
+            <Profile />
+            <Intro_slide />
+            <Nav_bar />
+            <About_us_slide />
+            <Time_line_slide />
+            <Services_slide />
+          </div>
+        </>
+      );
+    } else {
+      return(
+        <>
+          <div className="mt-[10%]" />
+          <Intro_slide />
+          <About_us_slide />
+          <Time_line_slide />
+          <Services_slide />
+        </>
+      );
+    }
 }

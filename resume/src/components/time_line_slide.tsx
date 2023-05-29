@@ -6,13 +6,12 @@ const Time_line_slide = () => {
     <>
       <div
         id="about_us_content"
-        className="col-start-2 col-end-4 row-start-3"
-      >
+        className="sm:col-start-2 sm:col-end-4 sm:row-start-3 mt-[50px] sm:mt-0 px-10 sm:px-0">
         <div
           id="page_timeline_marker"
-          className="mb-[25px] flex w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 px-4 py-2 hover:cursor-pointer"
+          className="sm:mb-[25px] flex w-[130px] sm:w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 sm:px-4 sm:py-2 hover:cursor-pointer"
         >
-          <p className="text-center text-neutral-400">
+          <p className="sm:text-center text-neutral-400">
             <FontAwesomeIcon
               className="pr-[10px]"
               icon={faBolt}
@@ -20,15 +19,15 @@ const Time_line_slide = () => {
             Experience
           </p>
         </div>
-        <div className={styles.timeline_container}>
+        <div className={"sm:mt-[150px] mt-10 " + styles.timeline_container}>
           <ul className={styles.timeline_ul}>
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Jan 2023 - May 2023 </p>
-                <p className="mt-[10px] text-[25px] font-bold">
+                <p className="mt-[10px] sm:text-[25px] font-bold">
                   Systems Engineer @ IQNOX
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   In my year as a systems engineer at IQNOX,
                   I spent my time building out the
                   infrastructure for a managed service
@@ -52,11 +51,11 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Jan 2023 - May 2023 </p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   Systems Engineering Contract for BAE
                   Systems with IQNOX
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   During my contract at BAE Systems, I
                   consulted for a system upgrade of their
                   internal Source and Requirements
@@ -74,12 +73,12 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Jan 2022 - Jun 2022</p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   Software & Systems Engineering Contract
                   for Los Alamos National Laboratory with
                   IQNOX
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   In my work with Los Alamos, I helped
                   develop a standardized workflow for
                   testing and requirements across various
@@ -98,11 +97,11 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Feb 2020 - Dec 2022</p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   Software & Systems Engineering Contract
                   for General Atomics with IQNOX
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   While at General Atomics, I played a role
                   in maintaining and enhancing their
                   requirements management system. One of my
@@ -124,10 +123,10 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className=" px-12">
                 <p> Jan 2020 - Dec 2022 </p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   Software Engineer @ IQNOX
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   During my time as a software engineer at
                   IQNOX, I developed tools to efficiently
                   manage their infrastructure and simplify
@@ -147,10 +146,10 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className="px-12">
                 <p> Jan 2018 - Dec 2019 </p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   Systems Engineer @ HostDime
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   During my time at HostDime, I provided
                   support to their clients by resolving
                   their web hosting issues. HostDime managed
@@ -172,10 +171,10 @@ const Time_line_slide = () => {
             <li className={styles.timeline_items}>
               <div className="px-12">
                 <p> Jan 2015 - Dec 2018 </p>
-                <p className="text-[25px] font-bold">
+                <p className="sm:text-[25px] font-bold">
                   PHP Web Developer for Web Wizards
                 </p>
-                <p className="mt-[10px] text-lg text-neutral-400">
+                <p className="mt-[10px] sm:text-lg text-neutral-400">
                   During my time at Web Wizards, I created
                   custom WordPress templates and plugins for
                   various clients, such as law firms,
