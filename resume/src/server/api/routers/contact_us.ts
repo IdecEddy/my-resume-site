@@ -5,10 +5,10 @@ export const contact_router = createTRPCRouter({
   log_message: publicProcedure
     .input(
       z.object({
-        name: z.string(),
-        email: z.string(),
-        phone: z.string(),
-        info: z.string(),
+        name: z.string().min(2),
+        email: z.string().email(),
+        phone: z.string().min(10),
+        info: z.string().min(5),
       })
     )
     .mutation(async ({ ctx, input }) => {
