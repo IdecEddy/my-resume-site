@@ -9,12 +9,12 @@ import {
 const Services_slide = () => {
   return (
     <>
-      <div className="sm:col-start-2 sm:col-end-4 sm:row-start-4 h-[4000px] px-10 sm:px-0 mt-[50px] sm:mt-0">
+      <div className="mt-[50px] px-10 xl:col-start-2 xl:col-end-4 xl:row-start-4 xl:mt-0 xl:px-0">
         <div
           id="page_services_marker"
-          className="sm:mb-[25px] flex w-[130px] sm:w-[150px] cursor-default flex-row justify-center rounded-full border border-neutral-400 sm:px-4 sm:py-2 hover:cursor-pointer"
+          className="flex w-[130px] cursor-default flex-row justify-center rounded-full border border-neutral-400 hover:cursor-pointer xl:mb-[25px] xl:w-[150px] xl:px-4 xl:py-2"
         >
-          <p className="sm:text-center text-neutral-400">
+          <p className="text-neutral-400 xl:text-center">
             <FontAwesomeIcon
               className="pr-[10px]"
               icon={faList}
@@ -25,11 +25,11 @@ const Services_slide = () => {
         <div className="my-[25px] mt-[60px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
-              <p className="sm:text-2xl font-bold text-violet-400 hover:border-violet-400">
+              <p className="font-bold text-violet-400 hover:border-violet-400 xl:text-2xl">
                 {' '}
                 Frontend Development{' '}
               </p>
-              <p className="sm:text-lg text-neutral-400">
+              <p className="text-neutral-400 xl:text-lg">
                 Frontend development focuses on creating and
                 implementing the user interface and user
                 experience components of a software
@@ -47,7 +47,7 @@ const Services_slide = () => {
               </p>
             </div>
             <FontAwesomeIcon
-              className="sm:ml-auto sm:pr-[10px] sm:text-2xl text-violet-400"
+              className="text-violet-400 xl:ml-auto xl:pr-[10px] xl:text-2xl"
               icon={faObjectGroup}
             />
           </div>
@@ -55,11 +55,11 @@ const Services_slide = () => {
         <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
-              <p className="sm:text-2xl font-bold text-violet-400">
+              <p className="font-bold text-violet-400 xl:text-2xl">
                 {' '}
                 Backend Development{' '}
               </p>
-              <p className="sm:text-lg text-neutral-400">
+              <p className="text-neutral-400 xl:text-lg">
                 Backend development involves building and
                 maintaining the server-side components of a
                 software application or website that handle
@@ -78,7 +78,7 @@ const Services_slide = () => {
               </p>
             </div>
             <FontAwesomeIcon
-              className="ml-auto sm:pr-[10px] sm:text-2xl text-violet-400"
+              className="ml-auto text-violet-400 xl:pr-[10px] xl:text-2xl"
               icon={faSitemap}
             />
           </div>
@@ -86,11 +86,11 @@ const Services_slide = () => {
         <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
-              <p className="sm:text-2xl font-bold text-violet-400">
+              <p className="font-bold text-violet-400 xl:text-2xl">
                 {' '}
                 Development Pipeline Design{' '}
               </p>
-              <p className="sm:text-lg text-neutral-400">
+              <p className="text-neutral-400 xl:text-lg">
                 Development pipelines refer to a series of
                 automated steps that streamline the software
                 development process, including code
@@ -110,7 +110,7 @@ const Services_slide = () => {
               </p>
             </div>
             <FontAwesomeIcon
-              className="ml-auto sm:pr-[10px] sm:text-2xl text-violet-400"
+              className="ml-auto text-violet-400 xl:pr-[10px] xl:text-2xl"
               icon={faRandom}
             />
           </div>
@@ -118,11 +118,11 @@ const Services_slide = () => {
         <div className="my-[25px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>
-              <p className="sm:text-2xl font-bold text-violet-400">
+              <p className="font-bold text-violet-400 xl:text-2xl">
                 {' '}
                 Infrastructure as Code Development{' '}
               </p>
-              <p className="sm:text-lg text-neutral-400">
+              <p className="text-neutral-400 xl:text-lg">
                 Infrastructure as Code (IaC) is the practice
                 of managing and provisioning infrastructure
                 resources through machine-readable
@@ -141,7 +141,7 @@ const Services_slide = () => {
               </p>
             </div>
             <FontAwesomeIcon
-              className="ml-auto sm:pr-[10px] sm:text-2xl text-violet-400"
+              className="ml-auto text-violet-400 xl:pr-[10px] xl:text-2xl"
               icon={faCogs}
             />
           </div>

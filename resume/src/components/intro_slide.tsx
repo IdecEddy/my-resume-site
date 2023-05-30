@@ -6,11 +6,11 @@ const Intro_slide = () => {
     <>
       <div
         id="intro_slide"
-        className="sm:px-0 px-10 sm:relative sm:col-start-2 sm:col-end-4 sm:bg-transparent"
+        className="px-10 xl:relative xl:col-start-2 xl:col-end-4 xl:bg-transparent xl:px-0"
       >
         <div
           id="page_home_marker"
-          className="text-sm mb-[20px] flex w-[100px] sm:w-[130px] flex-row justify-center rounded-full border border-neutral-400 sm:px-4 sm:py-2 hover:cursor-pointer"
+          className="mb-[20px] flex w-[100px] flex-row justify-center rounded-full border border-neutral-400 text-sm hover:cursor-pointer xl:w-[130px] xl:px-4 xl:py-2"
         >
           <p className="text-center text-neutral-400">
             <FontAwesomeIcon
@@ -21,25 +21,25 @@ const Intro_slide = () => {
           </p>
         </div>
 
-        <p className="font-bold sm:text-[60px]">
+        <p className="font-bold xl:text-[60px]">
           Hello I'm{' '}
           <span className="font-bold text-violet-400">
             Edwin Mundo
           </span>
           ,
         </p>
-        <p className="font-bold sm:text-[60px]">
+        <p className="font-bold xl:text-[60px]">
           A Software and Systems Engineer Skilled in
           Full-stack Web Development.
         </p>
-        <p className="text-stone-400 mt-[30px] sm:mt-[50px] sm:text-2xl">
+        <p className="mt-[30px] text-stone-400 xl:mt-[50px] xl:text-2xl">
           With expertise in creating robust and scalable
           solutions, I strive to deliver impactful and
           efficient applications.
         </p>
-        <div className="mt-24 sm:mt-60 flex flex-row">
+        <div className="mt-24 flex flex-row xl:mt-60">
           <div className="pr-[50px]">
-            <p className="sm:text-[100px] text-[2.5rem] font-bold text-violet-400">
+            <p className="text-[2.5rem] font-bold text-violet-400 xl:text-[100px]">
               {' '}
               10+{' '}
             </p>
@@ -49,7 +49,7 @@ const Intro_slide = () => {
             </p>
           </div>
           <div className="pr-[50px]">
-            <p className="sm:text-[100px] text-[2.5rem]  font-bold text-violet-400">
+            <p className="text-[2.5rem] font-bold  text-violet-400 xl:text-[100px]">
               {' '}
               4+{' '}
             </p>

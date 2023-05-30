@@ -44,13 +44,13 @@ const Profile_mobile = () => {
               Based in Orlando, FL{' '}
             </p>
             <div className="flex flex-row justify-center pt-2">
-            <a
-              href="https://www.linkedin.com/in/edwinmundo/"
-              target="_blank"
-            >
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className="
+              <a
+                href="https://www.linkedin.com/in/edwinmundo/"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedinIn}
+                  className="
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -64,15 +64,15 @@ const Profile_mobile = () => {
                         hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
-              />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"
-              target="_blank"
-            >
-              <FontAwesomeIcon
-                icon={faYoutube}
-                className="
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCwk7dHR4W1aN7g5bgKXqpOQ"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  className="
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -86,15 +86,15 @@ const Profile_mobile = () => {
                         hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
-              />
-            </a>
-            <a
-              href="https://github.com/IdecEddy"
-              target="_blank"
-            >
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="
+                />
+              </a>
+              <a
+                href="https://github.com/IdecEddy"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -108,15 +108,15 @@ const Profile_mobile = () => {
                         hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
-              />
-            </a>
-            <a
-              href="https://twitter.com/TheDebateLord"
-              target="_blank"
-            >
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="
+                />
+              </a>
+              <a
+                href="https://twitter.com/TheDebateLord"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className="
                         mx-2
                         place-self-center
                         overflow-hidden
@@ -130,8 +130,8 @@ const Profile_mobile = () => {
                         hover:text-violet-400
                         2xl:p-3
                         2xl:text-xl"
-              />
-            </a>
+                />
+              </a>
             </div>
             <div className="flex justify-center">
               <button
@@ -158,12 +158,15 @@ const Profile_mobile = () => {
                   icon={faEnvelope}
                   className="
                     bg-violet-500
-                    text-white
                     pr-2
                     text-[15px]
-                    font-bold"
+                    font-bold
+                    text-black"
                 />
-                <p className="bg-violet-500"> Hire Me! </p>
+                <p className="bg-violet-500 text-black">
+                  {' '}
+                  Hire Me!{' '}
+                </p>
               </button>
             </div>
             <p

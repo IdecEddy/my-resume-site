@@ -5,6 +5,7 @@ import {
   faUser,
   faBolt,
   faList,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 const Nav_bar = () => {
   // This is used to move the navbar with the resizeing of the screen.
@@ -83,7 +84,6 @@ const Nav_bar = () => {
     function update_vert_pos() {
       const page_y_offset = window.pageYOffset;
       let point_list: number[] = [];
-      const tmp_state_list = Array.from(menu_state_list);
       menuIcons.forEach((item) => {
         const marker = document.getElementById(
           item.nav_to_link
@@ -118,7 +118,7 @@ const Nav_bar = () => {
           }
         }
         if (point_list.length - 1 == index) {
-          if ((page_y_offset + 50) > point_list[index]!) {
+          if (page_y_offset + 50 > point_list[index]!) {
             set_state_list((prevList) => {
               const tmp_state_list = [...prevList];
               tmp_state_list[0] = 'nav_' + index;
@@ -158,6 +158,11 @@ const Nav_bar = () => {
       icon_name: faList,
       active: false,
       nav_to_link: 'page_services_marker',
+    },
+    {
+      icon_name: faEnvelope,
+      active: false,
+      nav_to_link: 'page_contact_marker',
     },
   ];
 

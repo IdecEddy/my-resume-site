@@ -154,7 +154,7 @@ const Profile = () => {
             </p>
           </div>
           <div className="flex flex-row justify-center px-10">
-          <a
+            <a
               href="https://www.linkedin.com/in/edwinmundo/"
               target="_blank"
             >
@@ -274,10 +274,13 @@ const Profile = () => {
                             pr-2
                             text-[15px]
                             font-bold 
-                            text-white
+                            text-black
                             2xl:text-[22px]"
               />
-              <p className="bg-inherit"> Hire Me! </p>
+              <p className="bg-inherit text-black">
+                {' '}
+                Hire Me!{' '}
+              </p>
             </button>
           </div>
         </div>
