@@ -13,22 +13,16 @@ export const contact_router = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      console.log(
-        input.email,
-        input.name,
-        input.phone,
-        input.info,
-        input.token,
-      );
       let node_mailer = require('nodemailer');
       const captcha_secret_key = process.env.CAPTCHA_SECRET_KEY;
       let captcha_verification_url = 
         "https://www.google.com/recaptcha/api/siteverify?secret=" +
         captcha_secret_key +
         "&response=" +
-        input.token + "1123";
+        input.token;
       let response = await axios.post(captcha_verification_url);
-      if (response.data.success && response.data.score >= 0.5) {
+      if (response.data.success && response.data.score >= 0.9) {
+          console.log(response.data.score);
           const transporter = node_mailer.createTransport({
             service: 'gmail',
             auth: {

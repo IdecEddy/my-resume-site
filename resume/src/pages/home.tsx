@@ -27,7 +27,6 @@ export default function home() {
   if (!useMobile) {
     return (
       <>
-        
         <GoogleReCaptchaProvider
           reCaptchaKey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
           scriptProps={{
@@ -54,6 +53,15 @@ export default function home() {
   } else {
     return (
       <>
+        <GoogleReCaptchaProvider
+          reCaptchaKey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
+          scriptProps={{
+            async: false,
+            defer: false,
+            appendTo: "head",
+            nonce: undefined,
+          }}
+        >
         <div className="mt-[10%]" />
         <Profile_mobile />
         <Intro_slide />
@@ -61,6 +69,8 @@ export default function home() {
         <Time_line_slide />
         <Services_slide />
         <Contact_slide />
+        </ GoogleReCaptchaProvider> 
+
       </>
     );
   }
