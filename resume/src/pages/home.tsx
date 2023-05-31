@@ -7,6 +7,7 @@ import Time_line_slide from '../components/time_line_slide';
 import Services_slide from '../components/services_slide';
 import Contact_slide from '../components/contact_slide';
 import { useState, useEffect } from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 export default function home() {
   const [useMobile, setMobile] = useState(false);
 
@@ -26,6 +27,16 @@ export default function home() {
   if (!useMobile) {
     return (
       <>
+        
+        <GoogleReCaptchaProvider
+          reCaptchaKey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
+          scriptProps={{
+            async: false,
+            defer: false,
+            appendTo: "head",
+            nonce: undefined,
+          }}
+        >
         <div className="mt-[10%]" />
         <div className="slide-deck mx-10 grid h-full grid-cols-[repeat(3,minmax(0,1fr))_100px] gap-x-[100px] gap-y-[300px]">
           <Profile />
@@ -36,6 +47,8 @@ export default function home() {
           <Services_slide />
           <Contact_slide />
         </div>
+        </GoogleReCaptchaProvider>
+
       </>
     );
   } else {
