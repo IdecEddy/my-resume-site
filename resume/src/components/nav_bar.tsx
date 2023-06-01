@@ -74,7 +74,7 @@ const Nav_bar = () => {
         document.getElementById(nav_to_id);
       if (scroll_to_element) {
         scroll_to_element.scrollIntoView({
-          behavior: 'instant',
+          behavior: 'instant' as ScrollBehavior,
         });
       }
     }
