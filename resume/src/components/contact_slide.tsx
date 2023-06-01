@@ -11,7 +11,8 @@ const Contact_slide = () => {
     phone: '',
   });
   const [token, setToken] = useState<string>();
-  const [refreshReCaptcha, setRefreshReCaptcha] = useState(false);
+  const [refreshReCaptcha, setRefreshReCaptcha] =
+    useState(false);
   const handle_change = (event: any) => {
     const { name, value } = event.target;
     set_form_data((prev_form_data: any) => ({
@@ -45,32 +46,34 @@ const Contact_slide = () => {
               Together
             </span>
           </p>
-          <GoogleReCaptcha 
-            onVerify={token => { setToken(token) }}
-            refreshReCaptcha={ refreshReCaptcha } 
+          <GoogleReCaptcha
+            onVerify={(token) => {
+              setToken(token);
+            }}
+            refreshReCaptcha={refreshReCaptcha}
           />
           <form
             className="flex flex-col"
             onSubmit={async (e) => {
               e.preventDefault();
-              setRefreshReCaptcha(r => !r); 
+              setRefreshReCaptcha((r) => !r);
               const name: string = form_data.name;
               const email: string = form_data.email;
               const info: string = form_data.info;
               const phone: string = form_data.phone;
-              const captcha_token: string = token as string; 
+              const captcha_token: string = token as string;
               const input = {
                 name: name,
                 email: email,
                 phone: phone,
                 info: info,
-                token: captcha_token, 
+                token: captcha_token,
               };
               try {
                 call_api.mutate(input);
               } catch {}
             }}
-          >  
+          >
             <div className="flex flex-row">
               <div className="mr-20 flex flex-col">
                 <p className="mb-2 text-2xl text-white">
@@ -126,7 +129,7 @@ const Contact_slide = () => {
             />
             <input
               type="submit"
-              className="mb-10 cursor-pointer rounded-full border border-neutral-400 bg-violet-400 hover:bg-violet-500 px-1 py-1 text-xl font-bold text-black xl:w-[300px]"
+              className="mb-10 cursor-pointer rounded-full border border-neutral-400 bg-violet-400 px-1 py-1 text-xl font-bold text-black hover:bg-violet-500 xl:w-[300px]"
               value="Send Me An Email"
             />
           </form>

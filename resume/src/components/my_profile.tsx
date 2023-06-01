@@ -15,30 +15,32 @@ import { useEffect } from 'react';
 const Profile = () => {
   useEffect(() => {
     function update_grid_cell_size() {
-      let gap = 300;
-      let nav_width = 100;
-      let element =
+      const gap = 300;
+      const nav_width = 100;
+      const element =
         document.getElementsByClassName('slide-deck');
       if (element[0]) {
-        let grid_bounding =
+        const grid_bounding =
           element[0].getBoundingClientRect();
-        let left_pad = grid_bounding.left;
-        let cell_width =
+        const left_pad = grid_bounding.left;
+        const cell_width =
           (grid_bounding.width - gap - nav_width) / 3;
-        let profile =
+        const profile =
           document.getElementById('profile_box');
         if (profile) {
-          profile.style.maxWidth = cell_width + 'px';
-          let profile_bounding =
+          profile.style.maxWidth =
+            String(cell_width) + 'px';
+          const profile_bounding =
             profile.getBoundingClientRect();
-          let profile_width = profile_bounding.width;
-          let profile_left =
+          const profile_width = profile_bounding.width;
+          const profile_left =
             (cell_width - profile_width) / 2 + left_pad;
-          let profile_top_pos =
+          const profile_top_pos =
             window.innerHeight / 2 -
             profile_bounding.height / 2;
-          profile.style.left = profile_left + 'px';
-          profile.style.top = profile_top_pos + 'px';
+          profile.style.left = String(profile_left) + 'px';
+          profile.style.top =
+            String(profile_top_pos) + 'px';
         }
       }
     }
@@ -246,26 +248,8 @@ const Profile = () => {
           <div className="flex justify-center text-center">
             <button
               type="button"
-              className={
-                'felx-row ' +
-                'text-15 ' +
-                'mt-10 ' +
-                'flex ' +
-                'w-4/5 ' +
-                'items-center ' +
-                'justify-center ' +
-                'overflow-hidden ' +
-                'rounded-full ' +
-                'border-neutral-400 ' +
-                'bg-violet-400 ' +
-                'hover:bg-violet-500 ' +
-                'text-center ' +
-                'font-bold ' +
-                'px-5 ' +
-                'py-1 ' +
-                'h-12 ' +
-                styles.email_button
-              }
+              className={`felx-row text-15 mt-10 flex h-12 w-4/5 items-center justify-center overflow-hidden rounded-full border-neutral-400
+     bg-violet-400 px-5 py-1 text-center font-bold hover:bg-violet-500 ${styles.email_button}`}
             >
               <FontAwesomeIcon
                 icon={faEnvelope}

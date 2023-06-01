@@ -22,7 +22,7 @@ const Intro_slide = () => {
         </div>
 
         <p className="font-bold xl:text-[60px]">
-          Hello I'm{' '}
+          Hello I&apos;m{' '}
           <span className="font-bold text-violet-400">
             Edwin Mundo
           </span>
