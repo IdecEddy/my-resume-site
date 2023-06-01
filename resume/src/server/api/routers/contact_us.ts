@@ -32,7 +32,7 @@ export const contact_router = createTRPCRouter({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         response.data.success &&
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        response.data.score >= 0.9
+        response.data.score >= 0.7
       ) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(response.data.score);
