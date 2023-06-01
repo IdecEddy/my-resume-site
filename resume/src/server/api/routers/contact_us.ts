@@ -26,6 +26,7 @@ export const contact_router = createTRPCRouter({
       const response = await axios.post(
         captcha_verification_url
       );
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.log(response.data.score);
       if (
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
