@@ -165,7 +165,7 @@ const Time_line_slide = () => {
                   These servers could run on either Windows
                   or Linux. When assisting clients, I would
                   examine the issue and then analyze the
-                  client&aposs code and service to determine the
+                  client&apos;s code and service to determine the
                   root of the problem. This experience
                   provided me with a solid understanding of
                   web technologies and has set me apart from

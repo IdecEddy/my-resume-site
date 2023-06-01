@@ -41,7 +41,7 @@ const Contact_slide = () => {
         <div id="contact-form">
           <p className="mb-10 text-2xl text-white xl:text-[50px]">
             {' '}
-            Let&aposs Work{' '}
+            Let&apos;s Work{' '}
             <span className="text-violet-400">
               Together
             </span>
