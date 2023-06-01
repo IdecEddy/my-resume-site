@@ -58,12 +58,13 @@ const Contact_slide = () => {
               const email: string = form_data.email;
               const info: string = form_data.info;
               const phone: string = form_data.phone;
+              const captcha_token: string = token as string; 
               const input = {
                 name: name,
                 email: email,
                 phone: phone,
                 info: info,
-                token: token, 
+                token: captcha_token, 
               };
               try {
                 call_api.mutate(input);
