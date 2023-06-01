@@ -66,9 +66,6 @@ export const contact_router = createTRPCRouter({
               }
             });
         });
-        return input.name;
-      } else {
-        return false;
       }
     }),
 });
