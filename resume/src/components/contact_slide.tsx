@@ -71,7 +71,7 @@ const Contact_slide = () => {
                 token: captcha_token,
               };
               try {
-                call_api.mutate(input);
+                console.log(call_api.mutate(input));
               } catch {}
             }}
           >
