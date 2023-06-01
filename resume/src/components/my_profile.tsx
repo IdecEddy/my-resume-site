@@ -248,8 +248,7 @@ const Profile = () => {
           <div className="flex justify-center text-center">
             <button
               type="button"
-              className={`felx-row text-15 mt-10 flex h-12 w-4/5 items-center justify-center overflow-hidden rounded-full border-neutral-400
-     bg-violet-400 px-5 py-1 text-center font-bold hover:bg-violet-500 ${styles.email_button}`}
+              className={`felx-row text-15 mt-10 flex h-12 w-4/5 items-center justify-center overflow-hidden rounded-full border-neutral-400 bg-violet-400 px-5 py-1 text-center font-bold hover:bg-violet-500 ${styles.email_button as string}`}
             >
               <FontAwesomeIcon
                 icon={faEnvelope}

@@ -11,23 +11,23 @@ const Nav_bar = () => {
   // This is used to move the navbar with the resizeing of the screen.
   useEffect(() => {
     function update_grid_cell_size() {
-      let element =
+      const element =
         document.getElementsByClassName('slide-deck');
       if (element[0]) {
-        let grid_bounding =
+        const grid_bounding =
           element[0].getBoundingClientRect();
-        let grid_width = grid_bounding.width;
-        let nav_pos = grid_width - 45;
-        let nav_element =
+        const grid_width = grid_bounding.width;
+        const nav_pos = grid_width - 45;
+        const nav_element =
           document.getElementById('nav_bar');
         if (nav_element) {
-          let nav_bounding =
+          const nav_bounding =
             nav_element.getBoundingClientRect();
-          let nav_top_pos =
+          const nav_top_pos =
             window.innerHeight / 2 -
             nav_bounding.height / 2;
-          nav_element.style.top = nav_top_pos + 'px';
-          nav_element.style.left = nav_pos + 'px';
+          nav_element.style.top = String(nav_top_pos) + 'px';
+          nav_element.style.left = String(nav_pos) + 'px';
         }
       }
     }
