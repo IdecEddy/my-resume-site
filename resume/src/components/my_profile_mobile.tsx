@@ -8,9 +8,6 @@ import {
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile_pic from '../public/profile3.jpg';
-import styles from '../styles/profile.module.css';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
 const Profile_mobile = () => {
   return (
     <>

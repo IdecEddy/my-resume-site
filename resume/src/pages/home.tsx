@@ -8,12 +8,13 @@ import Services_slide from '../components/services_slide';
 import Contact_slide from '../components/contact_slide';
 import { useState, useEffect } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-export default function home() {
+
+const Home = () => {
   const [useMobile, setMobile] = useState(false);
 
   useEffect(() => {
     const updateMobile = () => {
-      var flag = window.innerWidth < 1087 ? true : false;
+      const flag = window.innerWidth < 1087 ? true : false;
       setMobile(flag);
     };
 
@@ -77,3 +78,5 @@ export default function home() {
     );
   }
 }
+
+export default Home;

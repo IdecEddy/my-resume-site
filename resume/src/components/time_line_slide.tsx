@@ -22,8 +22,7 @@ const Time_line_slide = () => {
         </div>
         <div
           className={
-            'mt-10 xl:mt-[150px] ' +
-            styles.timeline_container
+            `mt-10 xl:mt-[150px] ${styles.timeline_container}`
           }
         >
           <ul className={styles.timeline_ul}>
@@ -166,7 +165,7 @@ const Time_line_slide = () => {
                   These servers could run on either Windows
                   or Linux. When assisting clients, I would
                   examine the issue and then analyze the
-                  client's code and service to determine the
+                  client&aposs code and service to determine the
                   root of the problem. This experience
                   provided me with a solid understanding of
                   web technologies and has set me apart from

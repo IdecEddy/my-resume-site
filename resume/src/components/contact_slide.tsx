@@ -13,9 +13,9 @@ const Contact_slide = () => {
   const [token, setToken] = useState<string>();
   const [refreshReCaptcha, setRefreshReCaptcha] =
     useState(false);
-  const handle_change = (event: any) => {
-    const { name, value } = event.target;
-    set_form_data((prev_form_data: any) => ({
+  const handle_change = (event: React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = event.target as HTMLInputElement;
+    set_form_data((prev_form_data) => ({
       ...prev_form_data,
       [name]: value,
     }));
@@ -41,7 +41,7 @@ const Contact_slide = () => {
         <div id="contact-form">
           <p className="mb-10 text-2xl text-white xl:text-[50px]">
             {' '}
-            Let's Work{' '}
+            Let&aposs Work{' '}
             <span className="text-violet-400">
               Together
             </span>
@@ -54,14 +54,14 @@ const Contact_slide = () => {
           />
           <form
             className="flex flex-col"
-            onSubmit={async (e) => {
+            onSubmit={(e) => {
               e.preventDefault();
               setRefreshReCaptcha((r) => !r);
               const name: string = form_data.name;
               const email: string = form_data.email;
               const info: string = form_data.info;
               const phone: string = form_data.phone;
-              const captcha_token: string = token as string;
+              const captcha_token: string = token;
               const input = {
                 name: name,
                 email: email,
