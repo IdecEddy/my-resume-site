@@ -85,7 +85,7 @@ const Contact_slide = () => {
                   name="name"
                   id="name"
                   type="text"
-                  onChange={handle_change}
+                  onChange={() => handle_change}
                 />
               </div>
               <div className="flex flex-col">
@@ -98,7 +98,7 @@ const Contact_slide = () => {
                   name="email"
                   id="email"
                   type="email"
-                  onChange={handle_change}
+                  onChange={() => handle_change}
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ const Contact_slide = () => {
                   name="phone"
                   id="phone"
                   type="text"
-                  onChange={handle_change}
+                  onChange={() => handle_change}
                 />
               </div>
             </div>
