@@ -1,8 +1,11 @@
 import { z } from 'zod';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 import axios from 'axios';
+import * as node_mailer from 'nodemailer';
+
 export const contact_router = createTRPCRouter({
-  log_message: publicProcedure
+  
+   log_message: publicProcedure
     .input(
       z.object({
         name: z.string().min(2),
@@ -12,22 +15,24 @@ export const contact_router = createTRPCRouter({
         token: z.string(),
       })
     )
-    .mutation(async ({ ctx, input }) => {
-      let node_mailer = require('nodemailer');
+    .mutation(async ({ input }) => {
       const captcha_secret_key =
         process.env.CAPTCHA_SECRET_KEY;
-      let captcha_verification_url =
+      const captcha_verification_url =
         'https://www.google.com/recaptcha/api/siteverify?secret=' +
         captcha_secret_key +
         '&response=' +
         input.token;
-      let response = await axios.post(
+      const response = await axios.post(
         captcha_verification_url
       );
       if (
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         response.data.success &&
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         response.data.score >= 0.9
       ) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(response.data.score);
         const transporter = node_mailer.createTransport({
           service: 'gmail',

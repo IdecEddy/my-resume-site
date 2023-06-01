@@ -66,8 +66,8 @@ const Nav_bar = () => {
 
   function navTo(nav_to_id: string, index: number) {
     const tmp_state_list = [...menu_state_list];
-    tmp_state_list[0] = 'nav_' + index;
-    tmp_state_list[1] = menu_state_list[0] as string;
+    tmp_state_list[0] = 'nav_' + String(index);
+    tmp_state_list[1] = menu_state_list[0];
     set_state_list(tmp_state_list);
     if (typeof window !== 'undefined') {
       const scroll_to_element =
@@ -83,7 +83,7 @@ const Nav_bar = () => {
   useEffect(() => {
     function update_vert_pos() {
       const page_y_offset = window.pageYOffset;
-      let point_list: number[] = [];
+      const point_list: number[] = [];
       menuIcons.forEach((item) => {
         const marker = document.getElementById(
           item.nav_to_link
@@ -108,9 +108,9 @@ const Nav_bar = () => {
             ) {
               set_state_list((prevList) => {
                 const tmp_state_list = [...prevList];
-                tmp_state_list[0] = 'nav_' + index;
+                tmp_state_list[0] = 'nav_' + String(index);
                 if (tmp_state_list[0] != prevList[0]) {
-                  tmp_state_list[1] = prevList[0] as string;
+                  tmp_state_list[1] = prevList[0];
                 }
                 return tmp_state_list;
               });
@@ -121,9 +121,9 @@ const Nav_bar = () => {
           if (page_y_offset + 50 > point_list[index]!) {
             set_state_list((prevList) => {
               const tmp_state_list = [...prevList];
-              tmp_state_list[0] = 'nav_' + index;
+              tmp_state_list[0] = 'nav_' + String(index);
               if (tmp_state_list[0] != prevList[0]) {
-                tmp_state_list[1] = prevList[0] as string;
+                tmp_state_list[1] = prevList[0];
               }
               return tmp_state_list;
             });
@@ -175,7 +175,7 @@ const Nav_bar = () => {
         {menuIcons.map((item, index) => (
           <FontAwesomeIcon
             key={index}
-            id={'nav_' + index}
+            id={'nav_' + String(index)}
             icon={item.icon_name}
             className={
               'cursor-pointer py-[10px] text-2xl hover:text-violet-400 ' +
