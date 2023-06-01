@@ -125,7 +125,7 @@ const Contact_slide = () => {
               className="mb-10 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[700px]"
               name="info"
               id="info"
-              onChange={handle_change}
+              onChange={() => handle_change}
             />
             <input
               type="submit"
