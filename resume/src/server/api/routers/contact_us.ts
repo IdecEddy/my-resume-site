@@ -55,16 +55,17 @@ export const contact_router = createTRPCRouter({
             <p>${input.info}</p>
             </div>`,
         };
-        transporter.sendMail(
-          mail_data,
-          (err: any, info: any) => {
-            if (err) {
-              console.log(err);
-            } else {
-              console.log(info);
-            }
-          }
-        );
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(
+            mail_data,
+            (err: any, info: any) => {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(info);
+              }
+            });
+        });
         return input.name;
       } else {
         return false;
