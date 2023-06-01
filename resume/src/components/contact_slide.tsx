@@ -3,6 +3,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { api } from '../utils/api';
 import { useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { ChangeEvent } from 'react';
 const Contact_slide = () => {
   const [form_data, set_form_data] = useState({
     name: '',
@@ -13,7 +14,7 @@ const Contact_slide = () => {
   const [token, setToken] = useState<string>();
   const [refreshReCaptcha, setRefreshReCaptcha] =
     useState(false);
-  const handle_change = (event: React.FormEvent<HTMLInputElement>) => {
+  const handle_change = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target as HTMLInputElement;
     set_form_data((prev_form_data) => ({
       ...prev_form_data,
@@ -85,7 +86,7 @@ const Contact_slide = () => {
                   name="name"
                   id="name"
                   type="text"
-                  onChange={() => handle_change}
+                  onChange={handle_change}
                 />
               </div>
               <div className="flex flex-col">
@@ -98,7 +99,7 @@ const Contact_slide = () => {
                   name="email"
                   id="email"
                   type="email"
-                  onChange={() => handle_change}
+                  onChange={handle_change}
                 />
               </div>
             </div>
@@ -113,7 +114,7 @@ const Contact_slide = () => {
                   name="phone"
                   id="phone"
                   type="text"
-                  onChange={() => handle_change}
+                  onChange={handle_change}
                 />
               </div>
             </div>
@@ -121,11 +122,12 @@ const Contact_slide = () => {
               {' '}
               Tell Me More!
             </p>
-            <textarea
+            <input
+              type="text"
               className="mb-10 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[700px]"
               name="info"
               id="info"
-              onChange={() => handle_change}
+              onChange={handle_change}
             />
             <input
               type="submit"
