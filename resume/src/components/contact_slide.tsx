@@ -74,7 +74,7 @@ const Contact_slide = () => {
               } catch {}
             }}
           >
-            <div className="flex flex-row">
+            <div className="flex flex-col xl:flex-row">
               <div className="mr-20 flex flex-col">
                 <p className="mb-2 text-2xl text-white">
                   {' '}
