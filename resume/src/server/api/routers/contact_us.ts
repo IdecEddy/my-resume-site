@@ -34,8 +34,6 @@ export const contact_router = createTRPCRouter({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         response.data.score >= 0.7
       ) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(response.data.score);
         const transporter = node_mailer.createTransport({
           service: 'gmail',
           auth: {
@@ -44,6 +42,7 @@ export const contact_router = createTRPCRouter({
           },
           secure: true,
         });
+        console.log(transporter);
         const mail_data = {
           from: 'contact@edwinmundo.dev',
           to: 'edwingmundo2@gmail.com',
