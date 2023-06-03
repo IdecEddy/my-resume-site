@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const updateMobile = () => {
-      const flag = window.innerWidth < 1087 ? true : false;
+      const flag = window.innerWidth < 1278 ? true : false;
       setMobile(flag);
     };
 
@@ -55,9 +55,6 @@ const Home = () => {
   } else {
     return (
       <>
-        <Head>
-          <link rel="icon" href='/site_logo_black.ico'/>
-        </Head>
         <GoogleReCaptchaProvider
           reCaptchaKey={
             process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!

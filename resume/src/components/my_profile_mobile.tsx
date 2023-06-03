@@ -9,6 +9,17 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile_pic from '../public/profile3.jpg';
 const Profile_mobile = () => {
+  function go_to_contact() {
+    if (typeof window !== 'undefined') {
+      const scroll_to_element =
+        document.getElementById('page_contact_marker');
+      if (scroll_to_element) {
+        scroll_to_element.scrollIntoView({
+          behavior: 'instant' as ScrollBehavior,
+        });
+      }
+    }
+  }
   return (
     <>
       <div className="flex flex-col items-center justify-center py-10">
@@ -133,6 +144,7 @@ const Profile_mobile = () => {
             <div className="flex justify-center">
               <button
                 type="button"
+                onClick={go_to_contact}
                 className={
                   'flex-row ' +
                   'text-15 ' +

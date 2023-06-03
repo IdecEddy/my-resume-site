@@ -57,6 +57,18 @@ const Profile = () => {
       );
     };
   }, []);
+  
+  function go_to_contact() {
+    if (typeof window !== 'undefined') {
+      const scroll_to_element =
+        document.getElementById('page_contact_marker');
+      if (scroll_to_element) {
+        scroll_to_element.scrollIntoView({
+          behavior: 'instant' as ScrollBehavior,
+        });
+      }
+    }
+  }
 
   return (
     <>
@@ -249,6 +261,7 @@ const Profile = () => {
             <button
               type="button"
               className={`felx-row text-15 mt-10 flex h-12 w-4/5 items-center justify-center overflow-hidden rounded-full border-neutral-400 bg-violet-400 px-5 py-1 text-center font-bold hover:bg-violet-500 ${styles.email_button}`}
+              onClick={() => go_to_contact()}
             >
               <FontAwesomeIcon
                 icon={faEnvelope}
