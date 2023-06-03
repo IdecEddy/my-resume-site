@@ -8,13 +8,12 @@ import Services_slide from '../components/services_slide';
 import Contact_slide from '../components/contact_slide';
 import { useState, useEffect } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import Head from 'next/head';
 const Home = () => {
   const [useMobile, setMobile] = useState(false);
 
   useEffect(() => {
     const updateMobile = () => {
-      const flag = window.innerWidth < 1278 ? true : false;
+      const flag = window.innerWidth < 1280 ? true : false;
       setMobile(flag);
     };
 
