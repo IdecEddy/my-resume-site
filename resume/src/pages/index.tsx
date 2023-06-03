@@ -8,7 +8,7 @@ import Services_slide from '../components/services_slide';
 import Contact_slide from '../components/contact_slide';
 import { useState, useEffect } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-
+import Head from 'next/head';
 const Home = () => {
   const [useMobile, setMobile] = useState(false);
 
@@ -55,6 +55,9 @@ const Home = () => {
   } else {
     return (
       <>
+        <Head>
+          <link rel="icon" href='/site_logo_black.ico'/>
+        </Head>
         <GoogleReCaptchaProvider
           reCaptchaKey={
             process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!
