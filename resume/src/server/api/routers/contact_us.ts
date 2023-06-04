@@ -2,9 +2,7 @@ import { z } from 'zod';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 import axios from 'axios';
 import * as node_mailer from 'nodemailer';
-
 export const contact_router = createTRPCRouter({
-  
    log_message: publicProcedure
     .input(
       z.object({
@@ -68,4 +66,8 @@ export const contact_router = createTRPCRouter({
         });
       }
     }),
+    info: publicProcedure.query(({ ctx, input}) => {
+      return ctx.userData 
+    }),
 });
+
