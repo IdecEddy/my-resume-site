@@ -36,7 +36,7 @@ type CreateContextOptions = {
  */
 const createInnerTRPCContext = (
   opts: CreateContextOptions,
-  userData: object,
+  userData: object
 ) => {
   return {
     session: opts.session,
@@ -55,20 +55,25 @@ export const createTRPCContext = async (
   opts: CreateNextContextOptions
 ) => {
   const { req, res } = opts;
-  
-  const forwardedFor = req.headers['x-forwarded-for'] as string
-  const ip = forwardedFor?.split(",").at(0) ?? "Unknown";
+
+  const forwardedFor = req.headers[
+    'x-forwarded-for'
+  ] as string;
+  const ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
 
   const userData = {
     Headers: req.headers,
-    Ip: ip 
-  }
+    Ip: ip,
+  };
 
   // Get the session from the server using the getServerSession wrapper function
   const session = await getServerAuthSession({ req, res });
-  return createInnerTRPCContext({
-    session,
-  }, userData);
+  return createInnerTRPCContext(
+    {
+      session,
+    },
+    userData
+  );
 };
 
 /**

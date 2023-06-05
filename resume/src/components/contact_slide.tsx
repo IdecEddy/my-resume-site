@@ -14,8 +14,11 @@ const Contact_slide = () => {
   const [token, setToken] = useState<string>();
   const [refreshReCaptcha, setRefreshReCaptcha] =
     useState(false);
-  const handle_change = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target as HTMLInputElement;
+  const handle_change = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } =
+      event.target as HTMLInputElement;
     set_form_data((prev_form_data) => ({
       ...prev_form_data,
       [name]: value,

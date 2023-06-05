@@ -26,7 +26,8 @@ const Nav_bar = () => {
           const nav_top_pos =
             window.innerHeight / 2 -
             nav_bounding.height / 2;
-          nav_element.style.top = String(nav_top_pos) + 'px';
+          nav_element.style.top =
+            String(nav_top_pos) + 'px';
           nav_element.style.left = String(nav_pos) + 'px';
         }
       }

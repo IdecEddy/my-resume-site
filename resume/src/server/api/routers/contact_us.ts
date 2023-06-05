@@ -3,7 +3,7 @@ import { createTRPCRouter, publicProcedure } from '../trpc';
 import axios from 'axios';
 import * as node_mailer from 'nodemailer';
 export const contact_router = createTRPCRouter({
-   log_message: publicProcedure
+  log_message: publicProcedure
     .input(
       z.object({
         name: z.string().min(2),
@@ -62,12 +62,12 @@ export const contact_router = createTRPCRouter({
               } else {
                 console.log(info);
               }
-            });
+            }
+          );
         });
       }
     }),
-    info: publicProcedure.query(({ ctx, input}) => {
-      return ctx.userData 
-    }),
+  info: publicProcedure.query(({ ctx, input }) => {
+    return ctx.userData;
+  }),
 });
-

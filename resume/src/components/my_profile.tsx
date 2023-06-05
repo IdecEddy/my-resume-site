@@ -57,11 +57,12 @@ const Profile = () => {
       );
     };
   }, []);
-  
+
   function go_to_contact() {
     if (typeof window !== 'undefined') {
-      const scroll_to_element =
-        document.getElementById('page_contact_marker');
+      const scroll_to_element = document.getElementById(
+        'page_contact_marker'
+      );
       if (scroll_to_element) {
         scroll_to_element.scrollIntoView({
           behavior: 'instant' as ScrollBehavior,
