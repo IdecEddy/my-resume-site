@@ -25,8 +25,8 @@ const About_us_slide = () => {
           <span className="text-violet-400">
             simple solutions
           </span>{' '}
-          and favoring straightforward designes is a
-          fundamental.
+          and favoring straightforward design is
+          fundamental to my philosophy.
         </p>
         <p className="text-neutral-400 xl:mt-[50px] xl:text-2xl">
           Seeking simple solutions and straightforward
