@@ -10,7 +10,7 @@ export const session_router = createTRPCRouter({
     });
     return sessions;
   }),
-  add_session: publicProcedure.query(async ({ ctx }) => {
+  add_session: publicProcedure.mutation(async ({ ctx }) => {
     try {
       const existing_ip_address =
         await ctx.prisma.ip_address.findFirst({
@@ -51,7 +51,7 @@ export const session_router = createTRPCRouter({
               ] as string,
             },
           });
-        return create_session;
+        return { id: create_session.id };
       }
       return 'error';
     } catch (error) {
