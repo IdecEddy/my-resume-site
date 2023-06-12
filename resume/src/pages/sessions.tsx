@@ -1,9 +1,9 @@
-const Sessions= () => {
-
-return(
+const Sessions = () => {
+  return (
     <>
       <p> Hello world </p>
-    </>);
-}
+    </>
+  );
+};
 
-export default Sessions; 
+export default Sessions;
