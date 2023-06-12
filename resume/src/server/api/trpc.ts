@@ -60,10 +60,11 @@ export const createTRPCContext = async (
     'x-forwarded-for'
   ] as string;
   const ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
-
+  const user_agent = req.headers['user-agent'];
   const userData = {
     Headers: req.headers,
     Ip: ip,
+    user_agent: user_agent,
   };
 
   // Get the session from the server using the getServerSession wrapper function

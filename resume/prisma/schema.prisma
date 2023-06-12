@@ -65,3 +65,17 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model ip_address {
+  id         Int     @id @default(autoincrement())
+  ipAddress  String @unique
+  sessions   web_session[]
+}
+
+model web_session {
+  id           Int      @id @default(autoincrement())
+  ipAddress    ip_address @relation(fields: [ipAddressId], references: [id])
+  ipAddressId  Int
+  dateCreated  DateTime @default(now())
+  userAgent    String
+}

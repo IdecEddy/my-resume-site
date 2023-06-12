@@ -68,6 +68,6 @@ export const contact_router = createTRPCRouter({
       }
     }),
   info: publicProcedure.query(({ ctx, input }) => {
-    return ctx.userData;
+    return ctx.userData
   }),
 });
