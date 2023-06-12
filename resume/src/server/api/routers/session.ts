@@ -16,7 +16,7 @@ export const session_router = createTRPCRouter({
       try {
         const existing_ip_address = await ctx.prisma.ip_address.findFirst({
           where: {
-            ipAddress: ctx.userData['Ip'],
+            ipAddress: ctx.userData['Ip'] as string,
           },
         });
         if (existing_ip_address) {
@@ -24,20 +24,13 @@ export const session_router = createTRPCRouter({
         } else {
           const new_ip_address = await ctx.prisma.ip_address.create({
             data: {
-              ipAddress: ctx.userData['Ip'],
+              ipAddress: ctx.userData['Ip'] as string,
             }
           });
           console.log('New IP address added to DB:', new_ip_address);
         }
-      } catch (error) {
-        console.log('Error creating IP address:', error);
-        throw error;
-      } finally {
-          await ctx.prisma.$disconnect();
-      }
-      try {
         const db_ip = await ctx.prisma.ip_address.findMany({
-          where: { ipAddress: ctx.userData['Ip'] },
+          where: { ipAddress: ctx.userData['Ip'] as string },
         });
         if (db_ip) {
           console.log(db_ip);
@@ -46,16 +39,17 @@ export const session_router = createTRPCRouter({
               ipAddress: {
                 connect: { id: db_ip[0]['id'] },
               },
-              userAgent: ctx.userData['user_agent'], 
+              userAgent: ctx.userData['user_agent'] as string, 
             },
           });
           return create_session;
         }
+        return "error";
       } catch (error) {
-        return "error could not add session to db";
-      } finally {
-        ctx.prisma.$disconnect();
-      }
-    }),
+        console.log("error could not add session to db");
+        throw error;
+      } 
+    })
+  ,
 });
 
