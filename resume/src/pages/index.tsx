@@ -32,10 +32,12 @@ const Home = () => {
   useEffect(() => {
     const create_session = async () => {
       const session = await add_session.mutateAsync();
-      set_session_created(session['id']);
+      set_session_created(session['id'] as number);
     };
     if (!inital_load.current) {
-      create_session();
+      create_session().catch(() => {
+        console.log('something happend');
+      });
     }
     inital_load.current = false;
   }, []);
