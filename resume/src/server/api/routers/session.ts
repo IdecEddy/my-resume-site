@@ -46,6 +46,7 @@ export const session_router = createTRPCRouter({
               ipAddress: {
                 connect: { id: db_ip[0]['id'] },
               },
+              sessionDuration: 0,
               userAgent: ctx.userData[
                 'user_agent'
               ] as string,
@@ -59,4 +60,27 @@ export const session_router = createTRPCRouter({
       throw error;
     }
   }),
+  update_session: publicProcedure
+    .input(z.object({ session_id: z.number().min(1) }))
+    .mutation(async ({ ctx, input }) => {
+      const web_session =
+        await ctx.prisma.web_session.findFirst({
+          where: {
+            id: input.session_id,
+          },
+        });
+      if (!web_session) {
+        throw new Error('could not find session');
+      }
+
+      const sessionDuration =
+        Date.now() - web_session.dateCreated.valueOf();
+      const db_update = await ctx.prisma.web_session.update(
+        {
+          where: { id: input.session_id },
+          data: { sessionDuration },
+        }
+      );
+      return db_update;
+    }),
 });
