@@ -77,5 +77,6 @@ model web_session {
   ipAddress    ip_address @relation(fields: [ipAddressId], references: [id])
   ipAddressId  Int
   dateCreated  DateTime @default(now())
+  sessionDuration Int
   userAgent    String
 }
