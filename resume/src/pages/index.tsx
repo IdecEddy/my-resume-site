@@ -28,18 +28,14 @@ const Home = () => {
   const add_session = api.session.add_session.useMutation();
   const [session_created, set_session_created] =
     useState(0);
-  const inital_load = useRef(true);
   useEffect(() => {
     const create_session = async () => {
       const session = await add_session.mutateAsync();
       set_session_created(session['id'] as number);
     };
-    if (!inital_load.current) {
-      create_session().catch(() => {
-        console.log('something happend');
-      });
-    }
-    inital_load.current = false;
+    create_session().catch(() => {
+      console.log('something happend');
+    });
   }, []);
   const update_session =
     api.session.update_session.useMutation();
