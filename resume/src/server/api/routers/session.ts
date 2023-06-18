@@ -82,5 +82,13 @@ export const session_router = createTRPCRouter({
         }
       );
       return db_update;
-    }),
+    })
+  ,get_count: publicProcedure.query( async ({ctx}) => {
+    const number_of_sessions = await ctx.prisma.web_session.count()
+    return number_of_sessions;
+  }), get_ip_count: publicProcedure.query( async ({ctx}) => {
+    const number_of_ips = await ctx.prisma.ip_address.count()
+    return number_of_ips;
+  }),
+
 });
