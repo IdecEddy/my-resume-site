@@ -40,7 +40,7 @@ const AdminIndex = () => {
             </tr>
           </thead>
           <tbody>
-            {ip_table.data.map((record, index) => (
+            { ip_table.data?.map((record, index) => (
               <tr key={index}>
                 <td className="border border-slate-300 pl-5 pr-5">
                   {record.ip}
