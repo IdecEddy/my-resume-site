@@ -82,13 +82,41 @@ export const session_router = createTRPCRouter({
         }
       );
       return db_update;
-    })
-  ,get_count: publicProcedure.query( async ({ctx}) => {
-    const number_of_sessions = await ctx.prisma.web_session.count()
+    }),
+  get_count: publicProcedure.query(async ({ ctx }) => {
+    const number_of_sessions =
+      await ctx.prisma.web_session.count();
     return number_of_sessions;
-  }), get_ip_count: publicProcedure.query( async ({ctx}) => {
-    const number_of_ips = await ctx.prisma.ip_address.count()
+  }),
+  get_ip_count: publicProcedure.query(async ({ ctx }) => {
+    const number_of_ips =
+      await ctx.prisma.ip_address.count();
     return number_of_ips;
   }),
-
+  get_top_five_ips: publicProcedure.query(
+    async ({ ctx }) => {
+      const top_five_ips: {
+        ipAddressId: number;
+        count: bigint;
+      }[] = await ctx.prisma
+        .$queryRaw`SELECT ipAddressId, COUNT(*) as count
+    FROM web_session
+    GROUP BY ipAddressId
+    ORDER BY count DESC
+    LIMIT 5`;
+      const ip_records = await Promise.all(
+        top_five_ips.map(async (db_return) => {
+          const ip_address_id = db_return.ipAddressId;
+          const ip_address_record =
+            await ctx.prisma.ip_address.findFirst({
+              where: { id: ip_address_id },
+            });
+          const ip_address = ip_address_record['ipAddress'];
+          const count = Number(db_return.count);
+          return { ip: ip_address, count: count };
+        })
+      );
+      return ip_records;
+    }
+  ),
 });
