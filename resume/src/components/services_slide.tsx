@@ -22,6 +22,12 @@ const Services_slide = () => {
             Services
           </p>
         </div>
+
+        <p className="font-bold xl:mb-20 xl:pt-[20px] xl:text-[60px]">
+          Let&apos;s talk about how I can{' '}
+          <span className="text-violet-400"> help </span>{' '}
+          you.
+        </p>
         <div className="my-[25px] mt-[60px] rounded-lg border border-neutral-400 p-10 hover:cursor-pointer hover:border-violet-400">
           <div className="flex flex-row">
             <div>

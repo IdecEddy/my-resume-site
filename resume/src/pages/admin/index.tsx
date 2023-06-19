@@ -51,7 +51,7 @@ const AdminIndex = () => {
         </div>
       </div>
       <div className="flex flex-row pl-10 pr-10">
-        <table className="table-auto border-collapse border border-slate-400 text-white">
+        <table className="border-collapse border border-slate-400 text-white">
           <thead>
             <tr>
               <th className="border border-slate-300 pl-5 pr-5">
@@ -75,7 +75,7 @@ const AdminIndex = () => {
             ))}
           </tbody>
         </table>
-        <table className="ml-10 table-auto border-collapse border border-slate-400 text-white">
+        <table className="ml-10 border-collapse border border-slate-400 text-white">
           <thead>
             <tr>
               <th className="border border-slate-300 pl-5 pr-5">
@@ -86,6 +86,9 @@ const AdminIndex = () => {
               </th>
               <th className="border border-slate-300 pl-5 pr-5">
                 Session Duration
+              </th>
+              <th className="border border-slate-300 pl-5 pr-5">
+                Date Created
               </th>
             </tr>
           </thead>
@@ -100,6 +103,9 @@ const AdminIndex = () => {
                 </th>
                 <th className="border border-slate-300 pl-5 pr-5">
                   {record.sessionDuration}
+                </th>
+                <th className="border border-slate-300 pl-5 pr-5">
+                  {record.dateCreated.toString()}
                 </th>
               </tr>
             ))}
