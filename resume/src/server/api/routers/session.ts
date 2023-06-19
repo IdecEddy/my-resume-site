@@ -118,5 +118,20 @@ export const session_router = createTRPCRouter({
       );
       return ip_records;
     }
-  ),
+  ), get_avg_session_duration: publicProcedure.query(
+    async ({ctx}) => {
+      const result = await ctx.prisma.$queryRaw<{ averageSessionDuration: number }[]>`SELECT AVG(sessionDuration) AS averageSessionDuration
+      FROM web_session;`;
+
+      const avg_session = Number(result[0].averageSessionDuration);
+      const avg_session_seconds = Math.floor(avg_session / 1000);
+
+      const hours = Math.floor(avg_session_seconds / 3600);
+      const minutes = Math.floor((avg_session_seconds % 3600) / 60);
+      const seconds = avg_session_seconds % 60;
+
+      const formatted_duration = `${hours}:${minutes}:${seconds}`;
+      console.log(formatted_duration);
+      return formatted_duration;
+    }),
 });

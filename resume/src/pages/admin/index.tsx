@@ -5,6 +5,7 @@ const AdminIndex = () => {
   const session_count = api.session.get_count.useQuery();
   const ip_count = api.session.get_ip_count.useQuery();
   const ip_table = api.session.get_top_five_ips.useQuery();
+  const avg_session = api.session.get_avg_session_duration.useQuery();
   return (
     <>
       <div className="flex flex-row justify-center">
@@ -24,6 +25,15 @@ const AdminIndex = () => {
           <p className="color-white text-2xl">
             {' '}
             Unique Views{' '}
+          </p>
+        </div>
+        <div className="m-[40px] flex w-1/5 flex-col items-center justify-center rounded border p-[40px]">
+          <p className="color-white text-2xl">
+            {avg_session.data}{' '}
+          </p>
+          <p className="color-white text-2xl">
+            {' '}
+            Avarage Session Duration{' '}
           </p>
         </div>
       </div>
