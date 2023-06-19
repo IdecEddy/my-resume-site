@@ -54,7 +54,7 @@ export const session_router = createTRPCRouter({
           });
         return { id: create_session.id };
       }
-      return 'error';
+      return 'Could not create new web_session.';
     } catch (error) {
       console.log('error could not add session to db');
       throw error;
@@ -72,13 +72,12 @@ export const session_router = createTRPCRouter({
       if (!web_session) {
         throw new Error('could not find session');
       }
-
-      const sessionDuration =
+      const session_duration: number =
         Date.now() - web_session.dateCreated.valueOf();
       const db_update = await ctx.prisma.web_session.update(
         {
           where: { id: input.session_id },
-          data: { sessionDuration },
+          data: { sessionDuration: session_duration },
         }
       );
       return db_update;
@@ -118,20 +117,48 @@ export const session_router = createTRPCRouter({
       );
       return ip_records;
     }
-  ), get_avg_session_duration: publicProcedure.query(
-    async ({ctx}) => {
-      const result = await ctx.prisma.$queryRaw<{ averageSessionDuration: number }[]>`SELECT AVG(sessionDuration) AS averageSessionDuration
+  ),
+  get_avg_session_duration: publicProcedure.query(
+    async ({ ctx }) => {
+      const result = await ctx.prisma.$queryRaw<
+        { averageSessionDuration: number }[]
+      >`SELECT AVG(sessionDuration) AS averageSessionDuration
       FROM web_session;`;
 
-      const avg_session = Number(result[0].averageSessionDuration);
-      const avg_session_seconds = Math.floor(avg_session / 1000);
+      const avg_session = Number(
+        result[0].averageSessionDuration
+      );
+      const avg_session_seconds = Math.floor(
+        avg_session / 1000
+      );
 
       const hours = Math.floor(avg_session_seconds / 3600);
-      const minutes = Math.floor((avg_session_seconds % 3600) / 60);
+      const minutes = Math.floor(
+        (avg_session_seconds % 3600) / 60
+      );
       const seconds = avg_session_seconds % 60;
 
       const formatted_duration = `${hours}:${minutes}:${seconds}`;
-      console.log(formatted_duration);
       return formatted_duration;
-    }),
+    }
+  ),
+  get_total_session_duration: publicProcedure.query(
+    async ({ ctx }) => {
+      const result = await ctx.prisma.web_session.aggregate(
+        {
+          _sum: {
+            sessionDuration: true,
+          },
+        }
+      );
+      const sum = result._sum.sessionDuration;
+      const sum_seconds = Math.floor(sum / 1000);
+      const hours = Math.floor(sum_seconds / 3600);
+      const minutes = Math.floor((sum_seconds % 3600) / 60);
+      const seconds = sum_seconds % 60;
+
+      const formated_sum = `${hours}:${minutes}:${seconds}`;
+      return formated_sum;
+    }
+  ),
 });
