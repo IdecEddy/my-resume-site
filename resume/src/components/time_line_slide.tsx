@@ -21,8 +21,17 @@ const Time_line_slide = () => {
           </p>
         </div>
         <div
-          className={`mt-10 xl:mt-[150px] ${styles.timeline_container}`}
+          className={`mt-10 xl:mt-[10px] ${styles.timeline_container}`}
         >
+          <p className="font-bold xl:mb-20 xl:pt-[20px] xl:text-[60px]">
+            Life shrinks or expands in proportion to one&apos;s
+            experience. Let&apos;s take a look at my
+            <span className="text-violet-400">
+              {' '}
+              adventures{' '}
+            </span>
+            as a developer.
+          </p>
           <ul className={styles.timeline_ul}>
             <li className={styles.timeline_items}>
               <div className=" px-12">
