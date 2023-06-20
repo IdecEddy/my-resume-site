@@ -24,8 +24,9 @@ const Time_line_slide = () => {
           className={`mt-10 xl:mt-[10px] ${styles.timeline_container}`}
         >
           <p className="font-bold xl:mb-20 xl:pt-[20px] xl:text-[60px]">
-            Life shrinks or expands in proportion to one&apos;s
-            experience. Let&apos;s take a look at my
+            Life shrinks or expands in proportion to
+            one&apos;s experience. Let&apos;s take a look at
+            my
             <span className="text-violet-400">
               {' '}
               adventures{' '}
