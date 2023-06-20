@@ -13,7 +13,9 @@ const AdminIndex = () => {
         <Average_session_duration />
         <Total_session_duration />
       </div>
-      <div className="flex flex-row pl-10 pr-10"></div>
+      <div className="flex flex-row justify-center">
+        <Session_table />
+      </div>
     </>
   );
 };
