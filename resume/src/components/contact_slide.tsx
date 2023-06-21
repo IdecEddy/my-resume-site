@@ -85,7 +85,7 @@ const Contact_slide = () => {
                   Full Name{' '}
                 </p>
                 <input
-                  className="mb-10 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[300px]"
+                  className="mb-10 bg-stone-950 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none hover:border-violet-400 focus:border-violet-400 xl:w-[300px]"
                   name="name"
                   id="name"
                   type="text"
@@ -98,7 +98,7 @@ const Contact_slide = () => {
                   Email Address{' '}
                 </p>
                 <input
-                  className="mb-10 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[300px]"
+                  className="mb-10 bg-stone-950 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none hover:border-violet-400 focus:border-violet-400 xl:w-[300px]"
                   name="email"
                   id="email"
                   type="email"
@@ -113,7 +113,7 @@ const Contact_slide = () => {
                   Phone Number{' '}
                 </p>
                 <input
-                  className="mb-10 border-b border-neutral-400  px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[300px]"
+                  className="mb-10 bg-stone-950 border-b border-neutral-400 hover:border-violet-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[300px]"
                   name="phone"
                   id="phone"
                   type="text"
@@ -127,14 +127,14 @@ const Contact_slide = () => {
             </p>
             <input
               type="text"
-              className="mb-10 border-b border-neutral-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[700px]"
+              className="mb-10 bg-stone-950 border-b border-neutral-400 hover:border-violet-400 px-1 py-1 text-lg text-white outline-none focus:border-violet-400 xl:w-[700px]"
               name="info"
               id="info"
               onChange={handle_change}
             />
             <input
               type="submit"
-              className="mb-10 cursor-pointer rounded-full border border-neutral-400 bg-violet-400 px-1 py-1 text-xl font-bold text-black hover:bg-violet-500 xl:w-[300px]"
+              className="mb-10  cursor-pointer rounded-full border border-neutral-400 bg-violet-400 px-1 py-1 text-xl font-bold text-black hover:bg-violet-500 xl:w-[300px]"
               value="Send Me An Email"
             />
           </form>

@@ -30,7 +30,7 @@ const Session_record = (
 
   return (
     <>
-      <div className="my-10 flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-stone-800 pb-2 pt-5">
+      <div className="hover:bg-[#0D0D0D] hover:cursor-pointer my-10 flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-stone-800 pb-2 pt-5">
         <div className="mb-2 flex flex-row">
           <div className="mx-auto ml-10 flex h-full flex-col justify-center">
             <p className="mb-2 font-bold text-violet-300">
