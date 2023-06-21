@@ -7,7 +7,13 @@ const Session_table = () => {
     <>
       <div className='mx-10'>
         { all_sessions.data?.map((record, index) => (
-          <Session_record key={index} record={record} />
+          <Session_record
+            key={index.toString()} 
+            record={{
+              sessionDuration: record.sessionDuration,
+              ipAddress: record.ipAddress.ipAddress
+            }}
+          /> 
         ))}
       </div>
     </>
