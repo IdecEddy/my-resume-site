@@ -1,4 +1,8 @@
-const Session_record = ({record}) => {
+const Session_record = (record: { 
+  sessionDuration: number 
+  ipAddress: { ipAddress: string }
+  }) => {
+
   return(
     <>
       <div className="w-full h-20 my-10 border rounded-2xl border-stone-800 overflow-hidden flex flex-row">
