@@ -7,7 +7,7 @@ import Total_session_duration from '~/components/admin/total_session_duration';
 const AdminIndex = () => {
   return (
     <>
-      <div className="grid justify-items-center grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+      <div className="m-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-items-center gap-8">
         <Page_views_card />
         <Unique_page_views />
         <Average_session_duration />
