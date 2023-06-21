@@ -21,22 +21,27 @@ const Session_table = () => {
 
   return (
     <>
-      <div className='mx-8'>
-        { all_sessions.data?.map((record, index) => ( 
+      <div className="mx-8">
+        {all_sessions.data?.map((record, index) => (
           <>
-          {useMobile ? <Session_record
-            key={index.toString()} 
-            record={{
-              sessionDuration: record.sessionDuration,
-              ipAddress: record.ipAddress.ipAddress
-            }}
-          /> : <Session_record_mobile
-            key={index.toString()} 
-            record={{
-              sessionDuration: record.sessionDuration,
-              ipAddress: record.ipAddress.ipAddress
-            }}
-          /> }
+            {useMobile ? (
+              <Session_record
+                key={index.toString()}
+                record={{
+                  sessionDuration: record.sessionDuration,
+                  ipAddress: record.ipAddress.ipAddress,
+                  dateCreated: record.dateCreated,
+                }}
+              />
+            ) : (
+              <Session_record_mobile
+                key={index.toString()}
+                record={{
+                  sessionDuration: record.sessionDuration,
+                  ipAddress: record.ipAddress.ipAddress,
+                }}
+              />
+            )}
           </>
         ))}
       </div>
