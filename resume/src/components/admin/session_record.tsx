@@ -1,16 +1,19 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react'; 
+
 const Session_record = (
   props: React.HTMLAttributes<HTMLDivElement> & {
     record: {
       sessionDuration: number;
       ipAddress: string;
       dateCreated: Date;
+      id: number;
     };
   }
 ) => {
-  const { sessionDuration, ipAddress, dateCreated } =
+  const { sessionDuration, ipAddress, dateCreated, id} =
     props.record;
   let hours = 0;
   let minutes = 0;
@@ -27,10 +30,9 @@ const Session_record = (
     seconds = sessionDurationSeconds % 60;
   }
   const sessionDurationFormated = `${hours}:${minutes}:${seconds}`;
-
   return (
     <>
-      <div className="hover:bg-[#0D0D0D] hover:cursor-pointer my-10 flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-stone-800 pb-2 pt-5">
+      <div className="my-5 flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-stone-800 bg-[#0D0D0D] pb-2 pt-5 hover:cursor-pointer">
         <div className="mb-2 flex flex-row">
           <div className="mx-auto ml-10 flex h-full flex-col justify-center">
             <p className="mb-2 font-bold text-violet-300">

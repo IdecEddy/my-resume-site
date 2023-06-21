@@ -7,15 +7,15 @@ import Total_session_duration from '~/components/admin/total_session_duration';
 const AdminIndex = () => {
   return (
     <>
-    <div className='bg-stone-950'>
-      <div className="p-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-items-center gap-8">
-        <Page_views_card />
-        <Unique_page_views />
-        <Average_session_duration />
-        <Total_session_duration />
+      <div className="bg-stone-950">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-items-center gap-8 p-8">
+          <Page_views_card />
+          <Unique_page_views />
+          <Average_session_duration />
+          <Total_session_duration />
+        </div>
+        <Session_table />
       </div>
-      <Session_table />
-    </div>
     </>
   );
 };
