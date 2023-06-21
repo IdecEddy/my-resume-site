@@ -7,15 +7,13 @@ import Total_session_duration from '~/components/admin/total_session_duration';
 const AdminIndex = () => {
   return (
     <>
-      <div className="flex flex-row justify-center">
+      <div className="grid justify-items-center grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
         <Page_views_card />
         <Unique_page_views />
         <Average_session_duration />
         <Total_session_duration />
       </div>
-      <div className="flex flex-row justify-center">
-        <Session_table />
-      </div>
+      <Session_table />
     </>
   );
 };
