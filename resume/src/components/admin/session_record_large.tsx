@@ -16,10 +16,14 @@ const Session_record_large = (
 ) => {
   interface ExpandContextType {
     itemExpanded: boolean;
-    setItemExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+    setItemExpanded: React.Dispatch<
+      React.SetStateAction<boolean>
+    >;
   }
   const { itemExpanded, setItemExpanded } =
-    useContext<ExpandContextType>(expandContext as React.Context<ExpandContextType>);
+    useContext<ExpandContextType>(
+      expandContext as React.Context<ExpandContextType>
+    );
   const expand = () => {
     const value = itemExpanded ? false : true;
     setItemExpanded(value);
@@ -59,7 +63,7 @@ const Session_record_large = (
             <p className="mb-2 font-bold text-violet-300">
               Sessin Start Date
             </p>
-            <p>{dateCreated.toString()}</p>
+            <p>{dateCreated.toDateString()}</p>
           </div>
           <div>
             <p className="mb-2 font-bold text-violet-300">

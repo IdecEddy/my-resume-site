@@ -4,9 +4,11 @@ import Session_record_large from './session_record_large';
 import { useState, useContext, createContext } from 'react';
 
 interface ExpandContextType {
-    itemExpanded: boolean;
-    setItemExpanded: React.Dispatch<React.SetStateAction<boolean>>;
-  }
+  itemExpanded: boolean;
+  setItemExpanded: React.Dispatch<
+    React.SetStateAction<boolean>
+  >;
+}
 
 export const expandContext = createContext(null);
 const Session_record = (

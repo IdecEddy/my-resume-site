@@ -12,13 +12,16 @@ const Session_record_small = (
     };
   }
 ) => {
-
   interface ExpandContextType {
     itemExpanded: boolean;
-    setItemExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+    setItemExpanded: React.Dispatch<
+      React.SetStateAction<boolean>
+    >;
   }
   const { itemExpanded, setItemExpanded } =
-    useContext<ExpandContextType>(expandContext as React.Context<ExpandContextType>);
+    useContext<ExpandContextType>(
+      expandContext as React.Context<ExpandContextType>
+    );
   const expand = () => {
     const value = itemExpanded ? false : true;
     setItemExpanded(value);
