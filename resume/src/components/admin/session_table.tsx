@@ -21,7 +21,7 @@ const Session_table = () => {
 
   return (
     <>
-      <div className="mx-8">
+      <div className="mx-8 pb-10">
         {all_sessions.data?.map((record, index) => (
           <>
             {useMobile ? (
@@ -31,6 +31,8 @@ const Session_table = () => {
                   sessionDuration: record.sessionDuration,
                   ipAddress: record.ipAddress.ipAddress,
                   dateCreated: record.dateCreated,
+                  userAgent: record.userAgent,
+                  id: record.id,
                 }}
               />
             ) : (

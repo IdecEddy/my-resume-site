@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 body,
-#__next,
-html {
+#__next {
   height: 100%;
   box-sizing: border-box;
+  background-color: rgb(12, 10, 9);
 }
 html * {
   box-sizing: border-box;
-  background-color: #151515;
 }
 p {
   color: white;

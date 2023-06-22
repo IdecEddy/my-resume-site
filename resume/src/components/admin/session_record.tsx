@@ -1,69 +1,60 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import Session_record_small from './session_record_small';
+import Session_record_large from './session_record_large';
+import { useState, useContext, createContext } from 'react';
+
+interface ExpandContextType {
+    itemExpanded: boolean;
+    setItemExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  }
+
+export const expandContext = createContext(null);
 const Session_record = (
   props: React.HTMLAttributes<HTMLDivElement> & {
     record: {
       sessionDuration: number;
       ipAddress: string;
       dateCreated: Date;
+      userAgent: string;
+      id: number;
     };
   }
 ) => {
-  const { sessionDuration, ipAddress, dateCreated } =
-    props.record;
-  let hours = 0;
-  let minutes = 0;
-  let seconds = 0;
-
-  if (sessionDuration > 0) {
-    const sessionDurationSeconds = Math.floor(
-      sessionDuration / 1000
-    );
-    hours = Math.floor(sessionDurationSeconds / 3600);
-    minutes = Math.floor(
-      (sessionDurationSeconds % 3600) / 60
-    );
-    seconds = sessionDurationSeconds % 60;
-  }
-  const sessionDurationFormated = `${hours}:${minutes}:${seconds}`;
+  const [itemExpanded, setItemExpanded] = useState(false);
 
   return (
     <>
-      <div className="my-10 flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-stone-800 pb-2 pt-5">
-        <div className="mb-2 flex flex-row">
-          <div className="mx-auto ml-10 flex h-full flex-col justify-center">
-            <p className="mb-2 font-bold text-violet-300">
-              {' '}
-              IP Address{' '}
-            </p>
-            <p> {ipAddress} </p>
-          </div>
-          <div className="m-auto flex h-full flex-col justify-center self-center">
-            <p className="mb-2 font-bold text-violet-300">
-              {' '}
-              Session Start Date{' '}
-            </p>
-            <p> {dateCreated.toDateString()} </p>
-          </div>
-          <div className="ml-auto mr-10 flex h-full flex-col justify-center self-end">
-            <p className="mb-2 font-bold text-violet-300">
-              {' '}
-              Session Duration{' '}
-            </p>
-            <p>
-              {sessionDuration > 0
-                ? sessionDurationFormated
-                : '00:00:00'}{' '}
-            </p>
-          </div>
-        </div>
-        <div className="self-center">
-          <FontAwesomeIcon
-            icon={faAngleDown}
-            className="text-white"
-          />
-        </div>
+      <div>
+        {itemExpanded ? (
+          <expandContext.Provider
+            value={{ itemExpanded, setItemExpanded }}
+          >
+            <Session_record_large
+              record={{
+                sessionDuration:
+                  props.record.sessionDuration,
+                ipAddress: props.record.ipAddress,
+                dateCreated: props.record.dateCreated,
+                userAgent: props.record.userAgent,
+                id: props.record.id,
+              }}
+            />
+          </expandContext.Provider>
+        ) : (
+          <expandContext.Provider
+            value={{ itemExpanded, setItemExpanded }}
+          >
+            <Session_record_small
+              record={{
+                sessionDuration:
+                  props.record.sessionDuration,
+                ipAddress: props.record.ipAddress,
+                dateCreated: props.record.dateCreated,
+                id: props.record.id,
+              }}
+            />
+          </expandContext.Provider>
+        )}
       </div>
     </>
   );

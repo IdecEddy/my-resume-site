@@ -10,7 +10,7 @@ const Session_record_mobile = (
   const { sessionDuration, ipAddress } = props.record;
   return (
     <>
-      <div className="my-10 flex h-20 w-full flex-row overflow-hidden rounded-2xl border border-stone-800 ">
+      <div className="my-5 flex h-20 w-full flex-row overflow-hidden rounded-2xl border border-stone-800 bg-[#0D0D0D] hover:cursor-pointer">
         <div className="ml-5 self-center">
           <span className="inline-block h-5 w-5 rounded-full bg-green-300"></span>
         </div>
