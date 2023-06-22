@@ -5,6 +5,7 @@ body,
 #__next {
   height: 100%;
   box-sizing: border-box;
+  background-color: rgb(12, 10, 9);
 }
 html * {
   box-sizing: border-box;
