@@ -41,6 +41,9 @@ const Session_table = () => {
                 record={{
                   sessionDuration: record.sessionDuration,
                   ipAddress: record.ipAddress.ipAddress,
+                  dateCreated: record.dateCreated,
+                  userAgent: record.userAgent,
+                  id: record.id,
                 }}
               />
             )}
