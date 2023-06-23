@@ -6,4 +6,9 @@ export default {
     extend: {},
   },
   plugins: [],
+  variants: {
+    extend: {
+      backgroundColor: ['hover'],
+    },
+  },
 } satisfies Config;
