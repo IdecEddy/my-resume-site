@@ -1,6 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleDown,
+  faAngleUp,
+} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { userAgentFromString } from 'next/server';
 const Session_record_mobile = (
@@ -103,7 +106,7 @@ const Session_record_mobile = (
           </div>
           <div className="self-center" onClick={expand}>
             <FontAwesomeIcon
-              icon={faAngleDown}
+              icon={faAngleUp}
               className="text-white"
             />
           </div>
