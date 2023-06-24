@@ -52,9 +52,9 @@ export const session_router = createTRPCRouter({
               userAgent: ctx.userData[
                 'user_agent'
               ] as string,
-              ipCountry: ctx.userData['ip_country'],
-              ipCity: ctx.userData['ip_city'],
-              ipState: ctx.userData['ip_state'],
+              ipCountry: ctx.userData['ip_country'] as string,
+              ipCity: ctx.userData['ip_city'] as string,
+              ipState: ctx.userData['ip_state'] as string,
             },
           });
         return { id: create_session.id };
