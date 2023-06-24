@@ -109,13 +109,13 @@ const Session_record_mobile = (
             </p>
             <div className='flex flex-col'>
             <p className="text-stone-300">
-              {`Country: ${country}`}
+              {`Country: ${decodeURIComponent(country)}`}
             </p>
             <p className="text-stone-300">
-              {`State: ${state}`}
+              {`State: ${decodeURIComponent(state)}`}
             </p>
             <p className='text-stone-300'>
-              {`City: ${city}`}
+              {`City: ${decodeURIComponent(city)}`}
             </p>
             </div>
           </div>
