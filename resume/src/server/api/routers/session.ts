@@ -167,6 +167,7 @@ export const session_router = createTRPCRouter({
       country: ctx.userData['ip_country'] as string,
       state: ctx.userData['ip_state'] as string,
       city: ctx.userData['ip_city'] as string,
+      headers: ctx.userData['headers'] as string,
     });
   }),
 });
