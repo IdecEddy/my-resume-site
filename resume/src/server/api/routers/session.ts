@@ -6,6 +6,8 @@ export const session_router = createTRPCRouter({
     const sessions = ctx.prisma.web_session.findMany({
       include: {
         ipAddress: true,
+      }, orderBy: {
+        id: 'desc'
       },
     });
     return sessions;
