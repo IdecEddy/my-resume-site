@@ -10,6 +10,9 @@ const Session_record_large = (
       ipAddress: string;
       dateCreated: Date;
       userAgent: string;
+      country: string;
+      state: string;
+      city: string;
       id: number;
     };
   }
@@ -33,6 +36,9 @@ const Session_record_large = (
     ipAddress,
     dateCreated,
     userAgent,
+    country,
+    state,
+    city,
     id,
   } = props.record;
   let hours = 0;
@@ -70,6 +76,23 @@ const Session_record_large = (
               Session Duration
             </p>
             <p>{sessionDurationFormated}</p>
+          </div>
+          <div>
+            <p className="font-bold text-violet-300">
+              {' '}
+              Session Location{' '}
+            </p>
+            <div className="flex flex-col">
+              <p className="text-stone-300">
+                {`Country: ${decodeURIComponent(country)}`}
+              </p>
+              <p className="text-stone-300">
+                {`State: ${decodeURIComponent(state)}`}
+              </p>
+              <p className="text-stone-300">
+                {`City: ${decodeURIComponent(city)}`}
+              </p>
+            </div>
           </div>
           <div>
             <p className="mb-2 font-bold text-violet-300">

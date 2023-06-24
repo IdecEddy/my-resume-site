@@ -32,6 +32,9 @@ const Session_table = () => {
                   ipAddress: record.ipAddress.ipAddress,
                   dateCreated: record.dateCreated,
                   userAgent: record.userAgent,
+                  country: record.ipCountry,
+                  state: record.ipState,
+                  city: record.ipCity,
                   id: record.id,
                 }}
               />

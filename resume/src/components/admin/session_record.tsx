@@ -18,6 +18,9 @@ const Session_record = (
       ipAddress: string;
       dateCreated: Date;
       userAgent: string;
+      country: string;
+      state: string;
+      city: string;
       id: number;
     };
   }
@@ -38,6 +41,10 @@ const Session_record = (
                 ipAddress: props.record.ipAddress,
                 dateCreated: props.record.dateCreated,
                 userAgent: props.record.userAgent,
+                country: props.record.country,
+                state: props.record.state,
+                city: props.record.city,
+
                 id: props.record.id,
               }}
             />
