@@ -62,8 +62,8 @@ export const createTRPCContext = async (
   const ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
   const user_agent = req.headers['user-agent'];
   const ip_country = (req.headers['x-vercel-ip-country']) ? req.headers['x-vercel-ip-country'] : 'n/a';
-  const ip_state = (req.headers['']) ? req.headers['x-vercel-ip-state'] : 'n/a';
-  const ip_city = (req.headers['']) ? req.headers['x-vercel-ip-city'] : 'n/a';
+  const ip_state = (req.headers['x-vercel-ip-country-region']) ? req.headers['x-vercel-ip-country-region'] : 'n/a';
+  const ip_city = (req.headers['x-vercel-ip-city']) ? req.headers['x-vercel-ip-city'] : 'n/a';
 
   const userData = {
     Headers: req.headers,
