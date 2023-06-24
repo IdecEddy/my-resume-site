@@ -5,7 +5,6 @@ import {
   faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { userAgentFromString } from 'next/server';
 const Session_record_mobile = (
   props: React.HTMLAttributes<HTMLDivElement> & {
     record: {
@@ -13,6 +12,9 @@ const Session_record_mobile = (
       ipAddress: string;
       dateCreated: Date;
       userAgent: string;
+      country: string;
+      state: string;
+      city: string;
       id: number;
     };
   }
@@ -22,6 +24,9 @@ const Session_record_mobile = (
     ipAddress,
     dateCreated,
     userAgent,
+    country,
+    state,
+    city,
     id,
   } = props.record;
   const [expanded, setExpanded] = useState(false);
@@ -98,6 +103,23 @@ const Session_record_mobile = (
             </p>
           </div>
           <div className="col-start-2 row-start-4">
+            <p className="font-bold text-violet-300">
+              {' '}
+              Session Location{' '}
+            </p>
+            <div className='flex flex-col'>
+            <p className="text-stone-300">
+              {`Country: ${decodeURIComponent(country)}`}
+            </p>
+            <p className="text-stone-300">
+              {`State: ${decodeURIComponent(state)}`}
+            </p>
+            <p className='text-stone-300'>
+              {`City: ${decodeURIComponent(city)}`}
+            </p>
+            </div>
+          </div>
+          <div className="col-start-2 row-start-5">
             <p className="font-bold text-violet-300">
               {' '}
               User Agent{' '}

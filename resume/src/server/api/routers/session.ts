@@ -52,6 +52,9 @@ export const session_router = createTRPCRouter({
               userAgent: ctx.userData[
                 'user_agent'
               ] as string,
+              ipCountry: ctx.userData['ip_country'] as string,
+              ipCity: ctx.userData['ip_city'] as string,
+              ipState: ctx.userData['ip_state'] as string,
             },
           });
         return { id: create_session.id };
@@ -162,5 +165,12 @@ export const session_router = createTRPCRouter({
       const formated_sum = `${hours}:${minutes}:${seconds}`;
       return formated_sum;
     }
-  ),
+  ), list_headers: publicProcedure.query(({ ctx }) => {
+    return ({
+      country: ctx.userData['ip_country'] as string,
+      state: ctx.userData['ip_state'] as string,
+      city: ctx.userData['ip_city'] as string,
+      headers: ctx.userData['Headers'] as string,
+    });
+  }),
 });
