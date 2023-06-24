@@ -76,4 +76,7 @@ model web_session {
   dateCreated  DateTime @default(now())
   sessionDuration Int
   userAgent    String
+  ipCountry    String @default("n/a")
+  ipState      String @default("n/a")
+  ipCity       String @default("n/a")
 }
