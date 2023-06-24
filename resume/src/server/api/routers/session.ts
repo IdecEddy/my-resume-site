@@ -163,6 +163,10 @@ export const session_router = createTRPCRouter({
       return formated_sum;
     }
   ), list_headers: publicProcedure.query(({ ctx }) => {
-    return ctx.userData['ip_country'] as string
+    return ({
+      country: ctx.userData['ip_country'] as string,
+      state: ctx.userData['ip_state'] as string,
+      city: ctx.userData['ip_city'] as string,
+    });
   }),
 });
