@@ -107,16 +107,16 @@ const Session_record_mobile = (
               {' '}
               Session Location{' '}
             </p>
-            <div className='flex flex-col'>
-            <p className="text-stone-300">
-              {`Country: ${decodeURIComponent(country)}`}
-            </p>
-            <p className="text-stone-300">
-              {`State: ${decodeURIComponent(state)}`}
-            </p>
-            <p className='text-stone-300'>
-              {`City: ${decodeURIComponent(city)}`}
-            </p>
+            <div className="flex flex-col">
+              <p className="text-stone-300">
+                {`Country: ${decodeURIComponent(country)}`}
+              </p>
+              <p className="text-stone-300">
+                {`State: ${decodeURIComponent(state)}`}
+              </p>
+              <p className="text-stone-300">
+                {`City: ${decodeURIComponent(city)}`}
+              </p>
             </div>
           </div>
           <div className="col-start-2 row-start-5">
