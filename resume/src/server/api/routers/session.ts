@@ -162,5 +162,7 @@ export const session_router = createTRPCRouter({
       const formated_sum = `${hours}:${minutes}:${seconds}`;
       return formated_sum;
     }
-  ),
+  ), list_headers: publicProcedure.query(async ({ ctx }) => {
+    return ctx.userData['Headers']
+  }),
 });

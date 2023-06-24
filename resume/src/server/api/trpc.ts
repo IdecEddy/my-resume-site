@@ -61,6 +61,7 @@ export const createTRPCContext = async (
   ] as string;
   const ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
   const user_agent = req.headers['user-agent'];
+
   const userData = {
     Headers: req.headers,
     Ip: ip,
