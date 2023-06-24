@@ -61,11 +61,13 @@ export const createTRPCContext = async (
   ] as string;
   const ip = forwardedFor?.split(',').at(0) ?? 'Unknown';
   const user_agent = req.headers['user-agent'];
+  const ip_country = (req.headers['x-vercel-ip-country']) ? req.headers['x-vercel-ip-country'] : 'n/a';
 
   const userData = {
     Headers: req.headers,
     Ip: ip,
     user_agent: user_agent,
+    ip_country: ip_country,
   };
 
   // Get the session from the server using the getServerSession wrapper function
