@@ -4,7 +4,8 @@ import {
   faAngleDown,
   faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { expandContext } from './session_record';
 const Session_record_mobile = (
   props: React.HTMLAttributes<HTMLDivElement> & {
     record: {
@@ -29,11 +30,22 @@ const Session_record_mobile = (
     city,
     id,
   } = props.record;
-  const [expanded, setExpanded] = useState(false);
   const expand = () => {
-    expanded ? setExpanded(false) : setExpanded(true);
+    itemExpanded
+      ? setItemExpanded(false)
+      : setItemExpanded(true);
   };
-  if (expanded == false) {
+  interface ExpandContextType {
+    itemExpanded: boolean;
+    setItemExpanded: React.Dispatch<
+      React.SetStateAction<boolean>
+    >;
+  }
+  const { itemExpanded, setItemExpanded } =
+    useContext<ExpandContextType>(
+      expandContext as React.Context<ExpandContextType>
+    );
+  if (itemExpanded == false) {
     return (
       <>
         <div className="my-5 grid grid-cols-[20px_1fr_30px] gap-10 rounded-2xl border border-stone-800 py-5 pl-5">
