@@ -4,6 +4,7 @@ import Page_views_card from '~/components/admin/page_views_card';
 import Unique_page_views from '~/components/admin/unique_page_views';
 import Average_session_duration from '~/components/admin/average_session_duration';
 import Total_session_duration from '~/components/admin/total_session_duration';
+import PageViewsGraph from '~/components/admin/page_views_graph';
 const AdminIndex = () => {
   return (
     <>

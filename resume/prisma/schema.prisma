@@ -80,3 +80,9 @@ model web_session {
   ipState      String @default("n/a")
   ipCity       String @default("n/a")
 }
+
+model web_session_count_history {
+  id             Int      @id @default(autoincrement())
+  count          Int
+  date_created   DateTime @default(now())
+}

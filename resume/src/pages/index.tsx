@@ -6,7 +6,7 @@ import About_us_slide from '../components/about_us_slide';
 import Time_line_slide from '../components/time_line_slide';
 import Services_slide from '../components/services_slide';
 import Contact_slide from '../components/contact_slide';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { api } from '../utils/api';
 
