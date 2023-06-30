@@ -137,7 +137,7 @@ export const session_router = createTRPCRouter({
       const avg_session = Number(
         result[0].averageSessionDuration
       );
-      const formatted_duration = makeTimestamp(avg_session); 
+      const formatted_duration = makeTimestamp(avg_session);
       return formatted_duration;
     }
   ),
@@ -150,7 +150,9 @@ export const session_router = createTRPCRouter({
           },
         }
       );
-      const formated_sum = makeTimestamp(result._sum.sessionDuration);
+      const formated_sum = makeTimestamp(
+        result._sum.sessionDuration
+      );
       return formated_sum;
     }
   ),

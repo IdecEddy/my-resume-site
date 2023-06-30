@@ -1,22 +1,23 @@
-
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+const Chart = dynamic(() => import('react-apexcharts'), {
+  ssr: false,
+});
 
 const Sandbox = () => {
   const [dataSample, setDataSample] = useState({
     options: {
       chart: {
-        id: "basic-bar",
+        id: 'basic-bar',
         toolbar: {
           show: false,
-        }
+        },
       },
       grid: {
         show: false,
       },
       dataLabels: {
-        enabled: false, 
+        enabled: false,
       },
       legend: {
         show: false,
@@ -34,16 +35,16 @@ const Sandbox = () => {
         axisTicks: {
           show: false,
         },
-        axisBorder: { 
+        axisBorder: {
           show: false,
         },
         labels: {
           show: false,
         },
       },
-      stroke: { 
+      stroke: {
         width: 2,
-        colors: ['#c4b5fd']
+        colors: ['#c4b5fd'],
       },
       plugin: {
         legend: {
@@ -51,30 +52,29 @@ const Sandbox = () => {
         },
         lable: {
           display: true,
-        }
+        },
       },
     },
     series: [
       {
-        name: "series-1",
-        data: [10, 11, 12, 12, 13, 13, 14]
-        
+        name: 'series-1',
+        data: [10, 11, 12, 12, 13, 13, 14],
       },
     ],
   });
-  const widthValue = "430";
-  const heightValue = "150";
-  return(
-    <div className='flex justify-center'> 
+  const widthValue = '430';
+  const heightValue = '150';
+  return (
+    <div className="flex justify-center">
       <Chart
         options={dataSample.options}
         series={dataSample.series}
         type="line"
         width={widthValue}
         height={heightValue}
-      /> 
+      />
     </div>
   );
-}
+};
 
 export default Sandbox;

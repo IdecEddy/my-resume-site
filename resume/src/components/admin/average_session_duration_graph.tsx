@@ -1,17 +1,27 @@
 import dynamic from 'next/dynamic';
-import { useState, useEffect} from 'react';
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { useState, useEffect } from 'react';
+const Chart = dynamic(() => import('react-apexcharts'), {
+  ssr: false,
+});
 
 const AverageSessionDurationGraph = () => {
-  const [graphSize, setGraphSize] = useState({ height: 0, width: 0});
+  const [graphSize, setGraphSize] = useState({
+    height: 0,
+    width: 0,
+  });
   useEffect(() => {
     const resizeGraph = () => {
-      if( typeof window !== 'undefined'){
-        const card = window.document.getElementById('page-view-card');
+      if (typeof window !== 'undefined') {
+        const card = window.document.getElementById(
+          'page-view-card'
+        );
         const cardRect = card.getBoundingClientRect();
-        setGraphSize({height: cardRect.height, width: cardRect.width});
+        setGraphSize({
+          height: cardRect.height,
+          width: cardRect.width,
+        });
       }
-    }
+    };
     resizeGraph();
     window.addEventListener('resize', resizeGraph);
 
@@ -22,7 +32,7 @@ const AverageSessionDurationGraph = () => {
   const [dataSample, setDataSample] = useState({
     options: {
       chart: {
-        id: "basic-bar",
+        id: 'basic-bar',
         toolbar: {
           show: false,
         },
@@ -34,7 +44,7 @@ const AverageSessionDurationGraph = () => {
         show: false,
       },
       dataLabels: {
-        enabled: false, 
+        enabled: false,
       },
       legend: {
         show: false,
@@ -55,14 +65,14 @@ const AverageSessionDurationGraph = () => {
         axisTicks: {
           show: false,
         },
-        axisBorder: { 
+        axisBorder: {
           show: false,
         },
         labels: {
           show: false,
         },
       },
-      stroke: { 
+      stroke: {
         width: 2,
         colors: ['#c4b5fd'],
       },
@@ -72,32 +82,31 @@ const AverageSessionDurationGraph = () => {
         },
         lable: {
           display: true,
-        }
+        },
       },
     },
     series: [
       {
-        name: "series-1",
-        data: [10, 11, 12, 12, 13, 13, 14]
-        
+        name: 'series-1',
+        data: [10, 11, 12, 12, 13, 13, 14],
       },
     ],
   });
   const widthValue = graphSize.width;
   const heightValue = graphSize.height;
-  return(
-  <>
-  <div className='row-start-1 col-start-3'>
-    <Chart
-      options={dataSample.options}
-      series={dataSample.series}
-      type="area"
-      width={widthValue}
-      height={heightValue}
-    />
-  </div>
-  </>
+  return (
+    <>
+      <div className="col-start-3 row-start-1">
+        <Chart
+          options={dataSample.options}
+          series={dataSample.series}
+          type="area"
+          width={widthValue}
+          height={heightValue}
+        />
+      </div>
+    </>
   );
-}
+};
 
 export default AverageSessionDurationGraph;
