@@ -65,7 +65,6 @@ const AverageSessionDurationGraph = () => {
       stroke: { 
         width: 2,
         colors: ['#c4b5fd'],
-        curve: 'smooth', 
       },
       plugin: {
         legend: {
