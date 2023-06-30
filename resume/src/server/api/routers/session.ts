@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import { makeTimestamp } from '~/utils/makeTimestamp';
 
 export const session_router = createTRPCRouter({
   get_all: publicProcedure.query(({ ctx }) => {
@@ -136,17 +137,7 @@ export const session_router = createTRPCRouter({
       const avg_session = Number(
         result[0].averageSessionDuration
       );
-      const avg_session_seconds = Math.floor(
-        avg_session / 1000
-      );
-
-      const hours = Math.floor(avg_session_seconds / 3600);
-      const minutes = Math.floor(
-        (avg_session_seconds % 3600) / 60
-      );
-      const seconds = avg_session_seconds % 60;
-
-      const formatted_duration = `${hours}:${minutes}:${seconds}`;
+      const formatted_duration = makeTimestamp(avg_session); 
       return formatted_duration;
     }
   ),
@@ -159,21 +150,12 @@ export const session_router = createTRPCRouter({
           },
         }
       );
-      const sum = result._sum.sessionDuration;
-      const sum_seconds = Math.floor(sum / 1000);
-      const hours = Math.floor(sum_seconds / 3600);
-      const minutes = Math.floor((sum_seconds % 3600) / 60);
-      const seconds = sum_seconds % 60;
-
-      const formated_sum = `${hours}:${minutes}:${seconds}`;
+      const formated_sum = makeTimestamp(result._sum.sessionDuration);
       return formated_sum;
     }
   ),
   list_headers: publicProcedure.query(({ ctx }) => {
     return {
-      country: ctx.userData['ip_country'] as string,
-      state: ctx.userData['ip_state'] as string,
-      city: ctx.userData['ip_city'] as string,
       headers: ctx.userData['Headers'] as string,
     };
   }),
